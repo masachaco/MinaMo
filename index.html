@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>MinaMo</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%230b0b10'/%3E%3Ccircle cx='12' cy='12' r='2.6' fill='%2308d9d6'/%3E%3Ccircle cx='12' cy='12' r='6.2' fill='none' stroke='%2308d9d6' stroke-width='1.6' opacity='.75'/%3E%3Ccircle cx='12' cy='12' r='9.6' fill='none' stroke='%23ff2e63' stroke-width='1.3' opacity='.6'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Dela+Gothic+One&family=DotGothic16&family=M+PLUS+Rounded+1c:wght@500;800&family=Mochiy+Pop+One&family=Montserrat:wght@300;500;600;800&family=Noto+Sans+JP:wght@400;500;700;900&family=Orbitron:wght@500;900&family=Share+Tech+Mono&family=Shippori+Mincho+B1:wght@600;800&family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap" />
+</head>
+<body>
+<div id="app">
+  <header class="topbar">
+    <div class="brand" title="MinaMo — 水面（みなも）· MusIc MOvie"><svg class="logo" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="2.6" fill="currentColor"/><circle cx="12" cy="12" r="6.4" fill="none" stroke="currentColor" stroke-width="1.6" opacity=".7"/><circle cx="12" cy="12" r="10.2" fill="none" stroke="currentColor" stroke-width="1.2" opacity=".35"/></svg><span>Mina<b>Mo</b></span><small>水面 · MUSIC MOVIE</small></div>
+    <div class="mode-tabs" id="modeTabs"></div>
+    <div class="transport">
+      <button id="btnHome" class="icon" title="先頭へ (Home)">⏮</button>
+      <button id="btnPlay" class="icon primary" title="再生 / 停止 (Space)">▶</button>
+      <button id="btnStopMode" class="stopmode" title="停止したときの動き（クリックで切替）"></button>
+      <select id="selRate" class="rate" title="再生速度（練習用。音程はそのまま・書き出しには影響しません）">
+        <option value="0.5">0.5×</option><option value="0.75">0.75×</option><option value="1" selected>1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option>
+      </select>
+      <button id="btnRec" class="rec" title="REC (Shift+R) — 選択中のトラックだけを録音">● REC</button>
+      <div class="timecode"><span id="tcTime">0:00.00</span><span id="tcBar">001.1</span></div>
+      <div class="beat-leds" id="beatLeds"></div>
+    </div>
+    <div class="top-right">
+      <span id="status" class="status"></span>
+      <button id="btnNew" class="small" title="新規プロジェクト（デモや今のプロジェクトを片付けて、まっさらから始める）">新規</button>
+      <button id="btnHelp" class="icon" title="チュートリアル">？</button>
+      <!-- GitHub mark: Octicons "mark-github" (MIT, GitHub Inc.; third-party/octicons/LICENSE) -->
+      <a id="lnkGitHub" class="icon-link" href="https://github.com/masachaco/MinaMo" target="_blank" rel="noopener" title="GitHub（ソースコード・不具合の報告）" aria-label="GitHub"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M6.766 11.328c-2.063-.25-3.516-1.734-3.516-3.656 0-.781.281-1.625.75-2.188-.203-.515-.172-1.609.063-2.062.625-.078 1.468.25 1.968.703.594-.187 1.219-.281 1.985-.281.765 0 1.39.094 1.953.265.484-.437 1.344-.765 1.969-.687.218.422.25 1.515.046 2.047.5.593.766 1.39.766 2.203 0 1.922-1.453 3.375-3.547 3.64.531.344.89 1.094.89 1.954v1.625c0 .468.391.734.86.547C13.781 14.359 16 11.53 16 8.03 16 3.61 12.406 0 7.984 0 3.563 0 0 3.61 0 8.031a7.88 7.88 0 0 0 5.172 7.422c.422.156.828-.125.828-.547v-1.25c-.219.094-.5.156-.75.156-1.031 0-1.64-.562-2.078-1.609-.172-.422-.36-.672-.719-.719-.187-.015-.25-.093-.25-.187 0-.188.313-.328.625-.328.453 0 .844.281 1.25.86.313.452.64.655 1.031.655s.641-.14 1-.5c.266-.265.47-.5.657-.656"/></svg></a>
+      <button id="btnUndo" class="icon" title="元に戻す (Ctrl+Z)">↶</button>
+      <button id="btnRedo" class="icon" title="やり直し (Ctrl+Shift+Z)">↷</button>
+      <button id="btnExport" class="accent" title="動画を書き出し">⬇ 書き出し</button>
+    </div>
+  </header>
+
+  <aside class="panel left" id="leftPanel"></aside>
+
+  <main class="stage">
+    <div class="viewport" id="viewport">
+      <div class="frame" id="frame">
+        <canvas id="out"></canvas>
+        <div class="rec-badge" id="recBadge">● REC</div>
+        <div class="tap-flash" id="tapFlash"></div>
+        <div class="drop-hint" id="dropHint">ここに 音楽 / 画像 / 動画 をドロップ</div>
+      </div>
+    </div>
+    <div class="prompter" id="prompter">
+      <div class="p-head"><div class="p-label" id="pLabel">NOW</div><div class="p-keys" id="pKeys"></div></div>
+      <div class="p-now" id="pNow">—</div>
+      <div class="p-next" id="pNext"></div>
+      <div class="p-cursor" id="pCursor"></div>
+    </div>
+  </main>
+
+  <aside class="panel right" id="rightPanel"></aside>
+
+  <section class="timeline-wrap">
+    <div class="tl-toolbar" id="tlToolbar"></div>
+    <canvas id="timeline"></canvas>
+  </section>
+</div>
+
+<div class="modal" id="exportModal" hidden>
+  <div class="modal-card">
+    <h2>動画を書き出し</h2>
+    <div class="form-grid" id="exportForm"></div>
+    <div class="progress"><div class="bar" id="exportBar"></div></div>
+    <div class="export-status" id="exportStatus"></div>
+    <div class="modal-actions">
+      <button id="exportCancel">閉じる</button>
+      <button id="exportStart" class="accent">書き出し開始</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<script type="module" src="/src/main.ts"></script>
+</body>
+</html>

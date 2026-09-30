@@ -1,0 +1,2522 @@
+{
+ "version": 1,
+ "settings": {
+  "title": "なんか爽やかなサビでごまかしてるけど",
+  "artist": "masachaco",
+  "bpm": 200,
+  "beatsPerBar": 4,
+  "offset": 0,
+  "width": 1920,
+  "height": 1080,
+  "fps": 60,
+  "previewScale": 0.5,
+  "quantize": 0,
+  "eventSnap": 2,
+  "latencyMs": 0,
+  "lineCapBars": 4,
+  "shotScale": 1,
+  "paletteId": "lemon",
+  "customPalette": {
+   "id": "custom",
+   "name": "Custom",
+   "bg": "#07070d",
+   "text": "#ffffff",
+   "accent": "#ff2e63",
+   "accent2": "#08d9d6"
+  },
+  "bgDim": 0.25,
+  "textAdapt": "high",
+  "hud": false,
+  "metronome": false,
+  "stopMode": "return",
+  "fxIntensity": 0.85,
+  "seed": 1,
+  "lyricStyle": "kinetic",
+  "lookStyle": "kinetic"
+ },
+ "lyricsText": "3\n2\n1\nLets'Go!  \n土曜午前十時\nお洗濯当番\n重い腰持ち上げて\nテレビを切りあげ\n洗い物取り出し\n色柄取り分けて\nくたびれた君のズボンも\n一緒に放った　\n何か\n私が当番になった週だけ\n君の洗濯物\n脱ぎ方ちょっと雑じゃない？\nそして\n右のポッケの中に\nまたまた\n何か入ってる\nしわくちゃなティッシュと\nなんか包装紙\nこの間言った\nはずなのに\nなんか爽やかな\nサビでごまかしてるけど\n本当\n頭にきたって\nつか\n何度も言ってみたって\nズボンのポッケに\nゴミがある \nこの想い\nいつかキミに届くかな\n明日散り散りティッシュに\nまみれた\n上着を着て出社\nすればいい\nなんか壮大なサビで\nごまかしてるけど\n本当\n頭にきたって\nつか\n何度も言ってみたって\nズボンのポッケに\nゴミがある \nこの想い\nいつかキミに届くかな\n明日散り散りティッシュに\nまみれた\n上着を着て出社\nすればいい ",
+ "lines": [
+  {
+   "id": "muntoade-5t-rvhv",
+   "raw": "3",
+   "text": "3",
+   "sub": "",
+   "chunks": [
+    "3"
+   ],
+   "times": [
+    22.8
+   ],
+   "end": null
+  },
+  {
+   "id": "muntoade-5u-vh68",
+   "raw": "2",
+   "text": "2",
+   "sub": "",
+   "chunks": [
+    "2"
+   ],
+   "times": [
+    23.099999999999998
+   ],
+   "end": null
+  },
+  {
+   "id": "muntoade-5v-gpo7",
+   "raw": "1",
+   "text": "1",
+   "sub": "",
+   "chunks": [
+    "1"
+   ],
+   "times": [
+    23.4
+   ],
+   "end": null
+  },
+  {
+   "id": "muntoade-5w-9iyw",
+   "raw": "Lets'Go!",
+   "text": "Lets'Go!",
+   "sub": "",
+   "chunks": [
+    "Lets'Go!"
+   ],
+   "times": [
+    23.55,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "end": null
+  },
+  {
+   "id": "muntoade-5x-kunp",
+   "raw": "土曜午前十時",
+   "text": "土曜午前十時",
+   "sub": "",
+   "chunks": [
+    "土曜",
+    "午前",
+    "十時"
+   ],
+   "times": [
+    24,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "end": null
+  },
+  {
+   "id": "muntoade-5y-nwby",
+   "raw": "お洗濯当番",
+   "text": "お洗濯当番",
+   "sub": "",
+   "chunks": [
+    "お洗濯",
+    "当番"
+   ],
+   "times": [
+    26.4,
+    null,
+    null,
+    null,
+    null
+   ],
+   "end": null
+  },
+  {
+   "id": "muntoade-5z-wlfd",
+   "raw": "重い腰持ち上げて",
+   "text": "重い腰持ち上げて",
+   "sub": "",
+   "chunks": [
+    "重い腰",
+    "持ち",
+    "上げて"
+   ],
+   "times": [
+    28.799999999999997,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "end": null
+  },
+  {
+   "id": "muntoade-60-o8pd",
+   "raw": "テレビを切りあげ",
+   "text": "テレビを切りあげ",
+   "sub": "",
+   "chunks": [
+    "テレビを",
+    "切りあげ"
+   ],
+   "times": [
+    31.2,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "end": null
+  },
+  {
+   "id": "muntoade-61-buuw",
+   "raw": "洗い物取り出し",
+   "text": "洗い物取り出し",
+   "sub": "",
+   "chunks": [
+    "洗い物",
+    "取り出し"
+   ],
+   "times": [
+    33.6,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "end": null
+  },
+  {
+   "id": "muntoade-62-7unj",
+   "raw": "色柄取り分けて",
+   "text": "色柄取り分けて",
+   "sub": "",
+   "chunks": [
+    "色柄",
+    "取り分けて"
+   ],
+   "times": [
+    36,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "end": null
+  },
+  {
+   "id": "muntoade-63-xz8g",
+   "raw": "くたびれた君のズボンも",
+   "text": "くたびれた君のズボンも",
+   "sub": "",
+   "chunks": [
+    "くたびれた",
+    "君の",
+    "ズボンも"
+   ],
+   "times": [
+    38.55,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "end": null
+  },
+  {
+   "id": "muntoade-64-xj7i",
+   "raw": "一緒に放った",
+   "text": "一緒に放った",
+   "sub": "",
+   "chunks": [
+    "一緒に",
+    "放った"
+   ],
+   "times": [
+    40.8,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "end": null
+  },
+  {
+   "id": "muntoade-65-wh1w",
+   "raw": "何か",
+   "text": "何か",
+   "sub": "",
+   "chunks": [
+    "何か"
+   ],
+   "times": [
+    42.75,
+    43.05
+   ],
+   "end": null
+  },
+  {
+   "id": "muntoadf-66-63zl",
+   "raw": "私が当番になった週だけ",
+   "text": "私が当番になった週だけ",
+   "sub": "",
+   "chunks": [
+    "私が",
+    "当番になった",
+    "週だけ"
+   ],
+   "times": [
+    43.199999999999996,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "end": null
+  },
+  {
+   "id": "muntoadf-67-3jk7",
+   "raw": "君の洗濯物",
+   "text": "君の洗濯物",
+   "sub": "",
+   "chunks": [
+    "君の",
+    "洗濯物"
+   ],
+   "times": [
+    47.55,
+    null,
+    null,
+    null,
+    null
+   ],
+   "end": null
+  },
+  {
+   "id": "muntoadf-68-cvl8",
+   "raw": "脱ぎ方ちょっと雑じゃない？",
+   "text": "脱ぎ方ちょっと雑じゃない？",
+   "sub": "",
+   "chunks": [
+    "脱ぎ方",
+    "ちょっと",
+    "雑じゃない？"
+   ],
+   "times": [
+    49.949999999999996,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "end": null
+  },
+  {
+   "id": "muntoadf-69-pxlc",
+   "raw": "そして",
+   "text": "そして",
+   "sub": "",
+   "chunks": [
+    "そして"
+   ],
+   "times": [
+    52.35,
+    52.5,
+    52.65
+   ],
+   "end": null
+  },
+  {
+   "id": "muntoadf-6a-7qz8",
+   "raw": "右のポッケの中に",
+   "text": "右のポッケの中に",
+   "sub": "",
+   "chunks": [
+    "右の",
+    "ポッケの",
+    "中に"
+   ],
+   "times": [
+    52.8,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "end": null
+  },
+  {
+   "id": "muntoadf-6b-b5im",
+   "raw": "またまた",
+   "text": "またまた",
+   "sub": "",
+   "chunks": [
+    "またまた"
+   ],
+   "times": [
+    55.199999999999996,
+    55.35,
+    55.5,
+    55.65
+   ],
+   "end": null
+  },
+  {
+   "id": "muntoadf-6c-f81u",
+   "raw": "何か入ってる",
+   "text": "何か入ってる",
+   "sub": "",
+   "chunks": [
+    "何か",
+    "入ってる"
+   ],
+   "times": [
+    55.8,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "end": null
+  },
+  {
+   "id": "muntoadf-6d-zgmm",
+   "raw": "しわくちゃなティッシュと",
+   "text": "しわくちゃなティッシュと",
+   "sub": "",
+   "chunks": [
+    "しわくちゃな",
+    "ティッシュと"
+   ],
+   "times": [
+    57.3,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "end": null
+  },
+  {
+   "id": "muntoadf-6e-yxdn",
+   "raw": "なんか包装紙",
+   "text": "なんか包装紙",
+   "sub": "",
+   "chunks": [
+    "なんか",
+    "包装紙"
+   ],
+   "times": [
+    58.65,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "end": null
+  },
+  {
+   "id": "muntoadf-6f-szgp",
+   "raw": "この間言った",
+   "text": "この間言った",
+   "sub": "",
+   "chunks": [
+    "この間",
+    "言った"
+   ],
+   "times": [
+    59.849999999999994,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "end": null
+  },
+  {
+   "id": "muntoadf-6g-zumr",
+   "raw": "はずなのに",
+   "text": "はずなのに",
+   "sub": "",
+   "chunks": [
+    "はず",
+    "なのに"
+   ],
+   "times": [
+    61.05,
+    null,
+    null,
+    null,
+    null
+   ],
+   "end": null
+  },
+  {
+   "id": "muntoadf-6h-o2r1",
+   "raw": "なんか爽やかな",
+   "text": "なんか爽やかな",
+   "sub": "",
+   "chunks": [
+    "なんか",
+    "爽やかな"
+   ],
+   "times": [
+    64.35,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "end": null
+  },
+  {
+   "id": "muntoadf-6i-uetl",
+   "raw": "サビでごまかしてるけど",
+   "text": "サビでごまかしてるけど",
+   "sub": "",
+   "chunks": [
+    "サビで",
+    "ごまかしてるけど"
+   ],
+   "times": [
+    66.75,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "end": null
+  },
+  {
+   "id": "muntoadf-6j-dwco",
+   "raw": "本当",
+   "text": "本当",
+   "sub": "",
+   "chunks": [
+    "本当"
+   ],
+   "times": [
+    69.14999999999999,
+    69.45
+   ],
+   "end": null
+  },
+  {
+   "id": "muntoadf-6k-amti",
+   "raw": "頭にきたって",
+   "text": "頭にきたって",
+   "sub": "",
+   "chunks": [
+    "頭にきたって"
+   ],
+   "times": [
+    69.6,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "end": null
+  },
+  {
+   "id": "muntoadf-6l-sya7",
+   "raw": "つか",
+   "text": "つか",
+   "sub": "",
+   "chunks": [
+    "つか"
+   ],
+   "times": [
+    70.64999999999999,
+    70.64999999999999
+   ],
+   "end": null
+  },
+  {
+   "id": "muntoadf-6m-yvx9",
+   "raw": "何度も言ってみたって",
+   "text": "何度も言ってみたって",
+   "sub": "",
+   "chunks": [
+    "何度も",
+    "言ってみたって"
+   ],
+   "times": [
+    70.8,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "end": null
+  },
+  {
+   "id": "muntoadf-6n-1cd2",
+   "raw": "ズボンのポッケに",
+   "text": "ズボンのポッケに",
+   "sub": "",
+   "chunks": [
+    "ズボンの",
+    "ポッケに"
+   ],
+   "times": [
+    71.85,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "end": null
+  },
+  {
+   "id": "muntoadf-6o-pdep",
+   "raw": "ゴミがある",
+   "text": "ゴミがある",
+   "sub": "",
+   "chunks": [
+    "ゴミがある"
+   ],
+   "times": [
+    73.05,
+    73.2,
+    73.35,
+    73.5,
+    73.64999999999999
+   ],
+   "end": null
+  },
+  {
+   "id": "muntoadf-6p-xyvr",
+   "raw": "この想い",
+   "text": "この想い",
+   "sub": "",
+   "chunks": [
+    "この想い"
+   ],
+   "times": [
+    74.39999999999999,
+    null,
+    null,
+    null
+   ],
+   "end": null
+  },
+  {
+   "id": "munttuy5-j-50ap",
+   "raw": "いつかキミに届くかな",
+   "text": "いつかキミに届くかな",
+   "sub": "",
+   "chunks": [
+    "いつか",
+    "キミに",
+    "届くかな"
+   ],
+   "times": [
+    76.35,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "end": null
+  },
+  {
+   "id": "munttuy6-k-h5az",
+   "raw": "明日散り散りティッシュに",
+   "text": "明日散り散りティッシュに",
+   "sub": "",
+   "chunks": [
+    "明日",
+    "散り散り",
+    "ティッシュに"
+   ],
+   "times": [
+    78.75,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "end": null
+  },
+  {
+   "id": "munttuy6-l-y5k0",
+   "raw": "まみれた",
+   "text": "まみれた",
+   "sub": "",
+   "chunks": [
+    "まみれた"
+   ],
+   "times": [
+    80.39999999999999,
+    80.55,
+    80.7,
+    80.85
+   ],
+   "end": null
+  },
+  {
+   "id": "munttuy6-m-7rnm",
+   "raw": "上着を着て出社",
+   "text": "上着を着て出社",
+   "sub": "",
+   "chunks": [
+    "上着を",
+    "着て",
+    "出社"
+   ],
+   "times": [
+    81.14999999999999,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "end": null
+  },
+  {
+   "id": "munttuy6-n-neh0",
+   "raw": "すればいい",
+   "text": "すればいい",
+   "sub": "",
+   "chunks": [
+    "すればいい"
+   ],
+   "times": [
+    83.25,
+    null,
+    null,
+    null,
+    null
+   ],
+   "end": null
+  },
+  {
+   "id": "munttuy6-o-70hq",
+   "raw": "なんか壮大なサビで",
+   "text": "なんか壮大なサビで",
+   "sub": "",
+   "chunks": [
+    "なんか",
+    "壮大な",
+    "サビで"
+   ],
+   "times": [
+    85.95,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "end": null
+  },
+  {
+   "id": "munttuy6-p-50b2",
+   "raw": "ごまかしてるけど",
+   "text": "ごまかしてるけど",
+   "sub": "",
+   "chunks": [
+    "ごまかしてるけど"
+   ],
+   "times": [
+    88.8,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "end": null
+  },
+  {
+   "id": "munttuy6-q-82zv",
+   "raw": "本当",
+   "text": "本当",
+   "sub": "",
+   "chunks": [
+    "本当"
+   ],
+   "times": [
+    90.75,
+    91.05
+   ],
+   "end": null
+  },
+  {
+   "id": "munttuy6-r-9asd",
+   "raw": "頭にきたって",
+   "text": "頭にきたって",
+   "sub": "",
+   "chunks": [
+    "頭にきたって"
+   ],
+   "times": [
+    91.2,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "end": null
+  },
+  {
+   "id": "munttuy6-s-cb5c",
+   "raw": "つか",
+   "text": "つか",
+   "sub": "",
+   "chunks": [
+    "つか"
+   ],
+   "times": [
+    92.25,
+    92.25
+   ],
+   "end": null
+  },
+  {
+   "id": "munttuy6-t-ljbt",
+   "raw": "何度も言ってみたって",
+   "text": "何度も言ってみたって",
+   "sub": "",
+   "chunks": [
+    "何度も",
+    "言ってみたって"
+   ],
+   "times": [
+    92.39999999999999,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "end": null
+  },
+  {
+   "id": "munttuy6-u-b8au",
+   "raw": "ズボンのポッケに",
+   "text": "ズボンのポッケに",
+   "sub": "",
+   "chunks": [
+    "ズボンの",
+    "ポッケに"
+   ],
+   "times": [
+    93.45,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "end": null
+  },
+  {
+   "id": "munttuy6-v-nqrq",
+   "raw": "ゴミがある",
+   "text": "ゴミがある",
+   "sub": "",
+   "chunks": [
+    "ゴミがある"
+   ],
+   "times": [
+    94.64999999999999,
+    94.8,
+    94.95,
+    95.1,
+    95.25
+   ],
+   "end": null
+  },
+  {
+   "id": "munttuy6-w-bo6k",
+   "raw": "この想い",
+   "text": "この想い",
+   "sub": "",
+   "chunks": [
+    "この想い"
+   ],
+   "times": [
+    96,
+    null,
+    null,
+    null
+   ],
+   "end": null
+  },
+  {
+   "id": "munttuy6-x-yssi",
+   "raw": "いつかキミに届くかな",
+   "text": "いつかキミに届くかな",
+   "sub": "",
+   "chunks": [
+    "いつか",
+    "キミに",
+    "届くかな"
+   ],
+   "times": [
+    97.95,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "end": null
+  },
+  {
+   "id": "munttuy6-y-wca6",
+   "raw": "明日散り散りティッシュに",
+   "text": "明日散り散りティッシュに",
+   "sub": "",
+   "chunks": [
+    "明日",
+    "散り散り",
+    "ティッシュに"
+   ],
+   "times": [
+    100.35,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "end": null
+  },
+  {
+   "id": "munttuy6-z-r3ac",
+   "raw": "まみれた",
+   "text": "まみれた",
+   "sub": "",
+   "chunks": [
+    "まみれた"
+   ],
+   "times": [
+    102,
+    102.14999999999999,
+    102.3,
+    102.45
+   ],
+   "end": null
+  },
+  {
+   "id": "munttuy6-10-twr9",
+   "raw": "上着を着て出社",
+   "text": "上着を着て出社",
+   "sub": "",
+   "chunks": [
+    "上着を",
+    "着て",
+    "出社"
+   ],
+   "times": [
+    102.75,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ],
+   "end": null
+  },
+  {
+   "id": "munttuy6-11-l4vs",
+   "raw": "すればいい",
+   "text": "すればいい",
+   "sub": "",
+   "chunks": [
+    "すればいい"
+   ],
+   "times": [
+    105,
+    null,
+    null,
+    null,
+    null
+   ],
+   "end": null
+  }
+ ],
+ "telopText": "# 1行 = 1テロップ。[型] 本文 | サブ（型: タイトル / 名前 / ラベル / 字幕 / チャプター / クレジット）\n[名前] {title} | {artist}",
+ "telops": [
+  {
+   "id": "mumcypcy-j-xn8z",
+   "raw": "[名前] {title} | {artist}",
+   "template": "lower",
+   "text": "{title}",
+   "sub": "{artist}",
+   "start": 9.6,
+   "dur": null
+  }
+ ],
+ "lyricStyleEvents": [],
+ "lyricEvents": [],
+ "telopEvents": [],
+ "charaEvents": [
+  {
+   "id": "mun7jut6-l-omx0",
+   "time": 8.025,
+   "kind": "char",
+   "value": "mun7iwuu-k-1rsu"
+  },
+  {
+   "id": "mumdsbq7-1e-a1v8",
+   "time": 11.85,
+   "kind": "char",
+   "value": "mum6yt99-44-h7ka"
+  },
+  {
+   "id": "mumdsdla-1f-xg40",
+   "time": 14.399999999999999,
+   "kind": "char",
+   "value": "mum724h2-45-0sks"
+  },
+  {
+   "id": "mumdsffh-1g-yvoh",
+   "time": 16.65,
+   "kind": "char",
+   "value": "mum72b4z-46-ma76"
+  },
+  {
+   "id": "mumdsh9i-1h-6hvq",
+   "time": 19.05,
+   "kind": "char",
+   "value": "mum73en9-53-w3w5"
+  },
+  {
+   "id": "mumdsj78-1j-kqfb",
+   "time": 21.599999999999998,
+   "kind": "char",
+   "value": "auto"
+  },
+  {
+   "id": "mumdsjff-1k-fss6",
+   "time": 21.9,
+   "kind": "char",
+   "value": "none"
+  },
+  {
+   "id": "muma5aqk-2d-sbqr",
+   "time": 23.849999999999998,
+   "kind": "pos",
+   "value": "left"
+  },
+  {
+   "id": "mumdssvc-1l-9q0d",
+   "time": 23.849999999999998,
+   "kind": "char",
+   "value": "mum6yt99-44-h7ka"
+  },
+  {
+   "id": "muma5cox-2e-c7s3",
+   "time": 26.4,
+   "kind": "pos",
+   "value": "center"
+  },
+  {
+   "id": "munu6qlf-3g-u06t",
+   "time": 26.4,
+   "kind": "char",
+   "value": "mum724h2-45-0sks"
+  },
+  {
+   "id": "muma5ehc-2f-lpqd",
+   "time": 28.65,
+   "kind": "pos",
+   "value": "right"
+  },
+  {
+   "id": "munu6sel-3h-xskn",
+   "time": 28.799999999999997,
+   "kind": "char",
+   "value": "munu6cp1-3e-7k4t"
+  },
+  {
+   "id": "mumdufwc-1w-d4kk",
+   "time": 30.9,
+   "kind": "pos",
+   "value": "left"
+  },
+  {
+   "id": "munu6ubl-3i-ewxr",
+   "time": 31.2,
+   "kind": "char",
+   "value": "mumdh6u3-q-0pvh"
+  },
+  {
+   "id": "mumduh05-1x-pope",
+   "time": 32.25,
+   "kind": "pos",
+   "value": "left"
+  },
+  {
+   "id": "muma5i3v-2h-x9gi",
+   "time": 33.3,
+   "kind": "effect",
+   "value": "shadow"
+  },
+  {
+   "id": "muma5ie8-2i-47b9",
+   "time": 33.75,
+   "kind": "effect",
+   "value": ""
+  },
+  {
+   "id": "muma5ixy-2j-z36l",
+   "time": 34.5,
+   "kind": "effect",
+   "value": "shadow"
+  },
+  {
+   "id": "munu8i19-3l-w1fn",
+   "time": 43.199999999999996,
+   "kind": "char",
+   "value": "mum72b4z-46-ma76"
+  },
+  {
+   "id": "muma444v-20-9two",
+   "time": 55.199999999999996,
+   "kind": "char",
+   "value": "mum72b4z-46-ma76"
+  },
+  {
+   "id": "munucrnr-4m-rvm4",
+   "time": 64.8,
+   "kind": "char",
+   "value": "mum724h2-45-0sks"
+  },
+  {
+   "id": "munvytv2-3x-4so8",
+   "time": 69.45,
+   "kind": "char",
+   "value": "munu68ew-3d-6et0"
+  },
+  {
+   "id": "munucwal-4n-airj",
+   "time": 70.8,
+   "kind": "char",
+   "value": "mum72b4z-46-ma76"
+  },
+  {
+   "id": "munucx9s-4o-7x2c",
+   "time": 72,
+   "kind": "char",
+   "value": "mum73en9-53-w3w5"
+  },
+  {
+   "id": "munvzbt6-41-ylc7",
+   "time": 73.2,
+   "kind": "char",
+   "value": "munu68ew-3d-6et0"
+  },
+  {
+   "id": "munvzc2j-42-0sfs",
+   "time": 73.5,
+   "kind": "char",
+   "value": "munu68ew-3d-6et0"
+  },
+  {
+   "id": "munvzcbr-43-1lz3",
+   "time": 73.8,
+   "kind": "char",
+   "value": "munu68ew-3d-6et0"
+  },
+  {
+   "id": "munvzcj6-44-itc9",
+   "time": 74.1,
+   "kind": "char",
+   "value": "munu68ew-3d-6et0"
+  },
+  {
+   "id": "munucz2g-4p-u4c9",
+   "time": 74.39999999999999,
+   "kind": "char",
+   "value": "mum724h2-45-0sks"
+  },
+  {
+   "id": "munud0w8-4q-gtt5",
+   "time": 76.8,
+   "kind": "char",
+   "value": "mum72b4z-46-ma76"
+  },
+  {
+   "id": "munud2rc-4r-17fg",
+   "time": 79.2,
+   "kind": "char",
+   "value": "mum73en9-53-w3w5"
+  },
+  {
+   "id": "munud5tp-4s-qtzd",
+   "time": 83.1,
+   "kind": "char",
+   "value": "mumdh6u3-q-0pvh"
+  },
+  {
+   "id": "munue6ni-5d-thyc",
+   "time": 86.25,
+   "kind": "char",
+   "value": "munu6cp1-3e-7k4t"
+  },
+  {
+   "id": "munueabv-5e-d3ev",
+   "time": 91.05,
+   "kind": "char",
+   "value": "munu68ew-3d-6et0"
+  },
+  {
+   "id": "munuebc1-5f-u28c",
+   "time": 92.39999999999999,
+   "kind": "char",
+   "value": "mum724h2-45-0sks"
+  },
+  {
+   "id": "munuec8j-5g-jd2g",
+   "time": 93.6,
+   "kind": "char",
+   "value": "mum72b4z-46-ma76"
+  },
+  {
+   "id": "munued4t-5h-dt50",
+   "time": 94.64999999999999,
+   "kind": "char",
+   "value": "mum73en9-53-w3w5"
+  },
+  {
+   "id": "munuee2t-5i-3uln",
+   "time": 96,
+   "kind": "char",
+   "value": "munu6cp1-3e-7k4t"
+  },
+  {
+   "id": "munuehr0-5j-rqyf",
+   "time": 100.64999999999999,
+   "kind": "char",
+   "value": "mumdh6u3-q-0pvh"
+  },
+  {
+   "id": "munuejsr-5k-xuzi",
+   "time": 103.35,
+   "kind": "char",
+   "value": "mum72b4z-46-ma76"
+  },
+  {
+   "id": "munuemge-5l-sppi",
+   "time": 106.8,
+   "kind": "char",
+   "value": "mum724h2-45-0sks"
+  },
+  {
+   "id": "munuenea-5m-a25x",
+   "time": 108,
+   "kind": "char",
+   "value": "munu6cp1-3e-7k4t"
+  },
+  {
+   "id": "munueqzz-5n-hbhi",
+   "time": 112.64999999999999,
+   "kind": "char",
+   "value": "mum6yt99-44-h7ka"
+  },
+  {
+   "id": "munueuqs-5o-2vg0",
+   "time": 117.6,
+   "kind": "char",
+   "value": "mum72b4z-46-ma76"
+  },
+  {
+   "id": "munuewjs-5p-bjkg",
+   "time": 119.85,
+   "kind": "char",
+   "value": "munu6cp1-3e-7k4t"
+  },
+  {
+   "id": "munueygk-5q-9fyb",
+   "time": 122.39999999999999,
+   "kind": "char",
+   "value": "mum724h2-45-0sks"
+  },
+  {
+   "id": "munuf25h-5r-1uuz",
+   "time": 127.19999999999999,
+   "kind": "char",
+   "value": "munu6cp1-3e-7k4t"
+  },
+  {
+   "id": "munuf40k-5s-x29o",
+   "time": 129.6,
+   "kind": "char",
+   "value": "munu68ew-3d-6et0"
+  },
+  {
+   "id": "munuf5wv-5t-s25c",
+   "time": 132,
+   "kind": "char",
+   "value": "mum72b4z-46-ma76"
+  },
+  {
+   "id": "munuf6sk-5u-39ly",
+   "time": 133.2,
+   "kind": "char",
+   "value": "mum724h2-45-0sks"
+  },
+  {
+   "id": "munuf7ql-5v-binr",
+   "time": 134.4,
+   "kind": "char",
+   "value": "mum6yt99-44-h7ka"
+  },
+  {
+   "id": "munuf9kj-5w-9qxa",
+   "time": 136.79999999999998,
+   "kind": "char",
+   "value": "mumdh6u3-q-0pvh"
+  }
+ ],
+ "camEvents": [
+  {
+   "id": "mumdqg2r-14-q8jw",
+   "time": 4.425,
+   "kind": "move",
+   "value": "push"
+  },
+  {
+   "id": "mumdqg32-15-nqy9",
+   "time": 4.5,
+   "kind": "frame",
+   "value": "face",
+   "smooth": false
+  },
+  {
+   "id": "munuaois-47-r491",
+   "time": 47.85,
+   "kind": "move",
+   "value": "beat"
+  },
+  {
+   "id": "munubr4h-4b-25t0",
+   "time": 57.15,
+   "kind": "move",
+   "value": "push"
+  },
+  {
+   "id": "mumaau91-57-62jf",
+   "time": 64.35,
+   "kind": "frame",
+   "value": "low",
+   "smooth": false
+  },
+  {
+   "id": "munvxm88-3i-s66x",
+   "time": 64.8,
+   "kind": "frame",
+   "value": "face",
+   "smooth": false
+  }
+ ],
+ "fxEvents": [
+  {
+   "id": "mumaf06w-68-n5vw",
+   "time": 32.4,
+   "fx": "shockwave",
+   "hold": 0
+  },
+  {
+   "id": "mumaf0fl-69-45l1",
+   "time": 32.699999999999996,
+   "fx": "shockwave",
+   "hold": 0
+  },
+  {
+   "id": "mumaf0nj-6a-f2nv",
+   "time": 33,
+   "fx": "shockwave",
+   "hold": 0
+  },
+  {
+   "id": "mumaf0s7-6b-07gs",
+   "time": 33.15,
+   "fx": "shockwave",
+   "hold": 0
+  },
+  {
+   "id": "mumaf0wf-6c-igst",
+   "time": 33.3,
+   "fx": "shockwave",
+   "hold": 0
+  },
+  {
+   "id": "mumaf11h-6d-i41u",
+   "time": 33.449999999999996,
+   "fx": "shockwave",
+   "hold": 0
+  },
+  {
+   "id": "munvw7va-2p-jlj3",
+   "time": 34.05,
+   "fx": "speedlines",
+   "hold": 0
+  },
+  {
+   "id": "munvvias-2m-tvlm",
+   "time": 35.1,
+   "fx": "spin",
+   "hold": 0
+  },
+  {
+   "id": "munvvk6z-2n-wc4i",
+   "time": 37.65,
+   "fx": "spin",
+   "hold": 0
+  },
+  {
+   "id": "munvt874-v-4qtr",
+   "time": 42,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munvt878-w-vji6",
+   "time": 42,
+   "fx": "shockwave",
+   "hold": 0
+  },
+  {
+   "id": "munvt8g4-x-ynh3",
+   "time": 42.3,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munvt8gl-y-b6wt",
+   "time": 42.3,
+   "fx": "shockwave",
+   "hold": 0
+  },
+  {
+   "id": "munvt8nv-z-n95y",
+   "time": 42.6,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munvt8os-10-6not",
+   "time": 42.6,
+   "fx": "shockwave",
+   "hold": 0
+  },
+  {
+   "id": "munvt8s3-11-mh4q",
+   "time": 42.75,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munvt8th-12-0uvx",
+   "time": 42.9,
+   "fx": "shockwave",
+   "hold": 0
+  },
+  {
+   "id": "munvt8x5-13-ym6l",
+   "time": 43.05,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munvt8y3-14-yrb6",
+   "time": 43.05,
+   "fx": "shockwave",
+   "hold": 0
+  },
+  {
+   "id": "munvw23v-2o-jrul",
+   "time": 43.05,
+   "fx": "spin",
+   "hold": 0
+  },
+  {
+   "id": "munvt91o-15-hfc7",
+   "time": 43.199999999999996,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munvt91w-16-kq7k",
+   "time": 43.199999999999996,
+   "fx": "shockwave",
+   "hold": 0
+  },
+  {
+   "id": "munw02d9-4u-34d8",
+   "time": 69.6,
+   "fx": "zoom",
+   "hold": 0
+  },
+  {
+   "id": "munw02df-4v-jnzl",
+   "time": 69.6,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munw03eg-4w-t72j",
+   "time": 70.8,
+   "fx": "zoom",
+   "hold": 0
+  },
+  {
+   "id": "munw03ej-4x-00eq",
+   "time": 70.8,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munw0d43-4y-bmlu",
+   "time": 72,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munw0d43-4z-dcko",
+   "time": 72,
+   "fx": "zoom",
+   "hold": 0
+  },
+  {
+   "id": "munw0dkn-50-8iff",
+   "time": 72.6,
+   "fx": "zoom",
+   "hold": 0
+  },
+  {
+   "id": "munw0dko-51-8kp3",
+   "time": 72.6,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munvzvw4-4i-14jj",
+   "time": 73.2,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munvzvwj-4j-zcrj",
+   "time": 73.2,
+   "fx": "zoom",
+   "hold": 0
+  },
+  {
+   "id": "munvzw5p-4k-63my",
+   "time": 73.5,
+   "fx": "zoom",
+   "hold": 0
+  },
+  {
+   "id": "munvzw5v-4l-nj3e",
+   "time": 73.5,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munvzwej-4m-tam2",
+   "time": 73.8,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munvzwf5-4n-f0yd",
+   "time": 73.8,
+   "fx": "zoom",
+   "hold": 0
+  },
+  {
+   "id": "munw0oc4-52-j13v",
+   "time": 73.8,
+   "fx": "speedlines",
+   "hold": 0
+  },
+  {
+   "id": "munvzwir-4o-z5kf",
+   "time": 73.95,
+   "fx": "zoom",
+   "hold": 0
+  },
+  {
+   "id": "munvzwj9-4p-2c5w",
+   "time": 73.95,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munvzwmz-4q-c6su",
+   "time": 74.1,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munw0oh8-53-hdge",
+   "time": 74.1,
+   "fx": "speedlines",
+   "hold": 0
+  },
+  {
+   "id": "munugnz8-6j-btq7",
+   "time": 74.25,
+   "fx": "spin",
+   "hold": 0
+  },
+  {
+   "id": "munvzwnv-4r-45qh",
+   "time": 74.25,
+   "fx": "zoom",
+   "hold": 0
+  },
+  {
+   "id": "munvzwqi-4s-cofl",
+   "time": 74.25,
+   "fx": "zoom",
+   "hold": 0
+  },
+  {
+   "id": "munvzwr3-4t-v82o",
+   "time": 74.25,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munw0olt-54-1d1v",
+   "time": 74.25,
+   "fx": "speedlines",
+   "hold": 0
+  },
+  {
+   "id": "munw0opn-55-e73g",
+   "time": 74.39999999999999,
+   "fx": "speedlines",
+   "hold": 0
+  },
+  {
+   "id": "munugpuk-6k-3zt4",
+   "time": 76.8,
+   "fx": "colorflash",
+   "hold": 0
+  },
+  {
+   "id": "munugrp3-6l-5sng",
+   "time": 79.2,
+   "fx": "vhs",
+   "hold": 0
+  },
+  {
+   "id": "munugtj9-6m-u1wb",
+   "time": 81.45,
+   "fx": "flash",
+   "hold": 0
+  },
+  {
+   "id": "munugvfp-6n-98mv",
+   "time": 84,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munugvy9-6o-4y96",
+   "time": 84.6,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munugwfc-6p-hmuz",
+   "time": 85.2,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munugwo7-6q-rzyu",
+   "time": 85.64999999999999,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munugwv7-6r-mino",
+   "time": 85.8,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munugx3n-6s-nsnf",
+   "time": 86.1,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munuh02e-6t-x0wh",
+   "time": 90,
+   "fx": "strobe",
+   "hold": 0
+  },
+  {
+   "id": "munuh0c5-6u-izub",
+   "time": 90.3,
+   "fx": "strobe",
+   "hold": 0
+  },
+  {
+   "id": "munuh0ld-6v-mo0t",
+   "time": 90.6,
+   "fx": "strobe",
+   "hold": 0
+  },
+  {
+   "id": "munuh0sj-6w-i00l",
+   "time": 90.89999999999999,
+   "fx": "strobe",
+   "hold": 0
+  },
+  {
+   "id": "munuh1pp-6x-g06n",
+   "time": 92.1,
+   "fx": "shockwave",
+   "hold": 0
+  },
+  {
+   "id": "munuh2lj-6y-tdys",
+   "time": 93.3,
+   "fx": "shockwave",
+   "hold": 0
+  },
+  {
+   "id": "munuh3sq-6z-d3lx",
+   "time": 94.8,
+   "fx": "shockwave",
+   "hold": 0
+  },
+  {
+   "id": "munuh411-70-rrsc",
+   "time": 95.1,
+   "fx": "shockwave",
+   "hold": 0
+  },
+  {
+   "id": "munuh49v-71-0esb",
+   "time": 95.39999999999999,
+   "fx": "shockwave",
+   "hold": 0
+  },
+  {
+   "id": "munuh4e0-72-5nva",
+   "time": 95.55,
+   "fx": "shockwave",
+   "hold": 0
+  },
+  {
+   "id": "munuh4i7-73-pwwt",
+   "time": 95.7,
+   "fx": "shockwave",
+   "hold": 0
+  },
+  {
+   "id": "munuh4ms-74-0gdu",
+   "time": 95.85,
+   "fx": "shockwave",
+   "hold": 0
+  },
+  {
+   "id": "munw20ie-56-aokx",
+   "time": 99.6,
+   "fx": "zoom",
+   "hold": 0
+  },
+  {
+   "id": "munw20j3-57-542q",
+   "time": 99.6,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munw20s7-58-wars",
+   "time": 99.89999999999999,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munw20s8-59-i4yn",
+   "time": 99.89999999999999,
+   "fx": "zoom",
+   "hold": 0
+  },
+  {
+   "id": "munw210j-5a-saeq",
+   "time": 100.2,
+   "fx": "zoom",
+   "hold": 0
+  },
+  {
+   "id": "munuh83s-75-v6qy",
+   "time": 100.35,
+   "fx": "spin",
+   "hold": 0
+  },
+  {
+   "id": "munw210j-5b-775v",
+   "time": 100.35,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munw2155-5c-4eg7",
+   "time": 100.35,
+   "fx": "zoom",
+   "hold": 0
+  },
+  {
+   "id": "munw2155-5d-b24u",
+   "time": 100.5,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munw2195-5e-nw6w",
+   "time": 100.5,
+   "fx": "zoom",
+   "hold": 0
+  },
+  {
+   "id": "munw21c1-5f-aio7",
+   "time": 100.64999999999999,
+   "fx": "zoom",
+   "hold": 0
+  },
+  {
+   "id": "munw21df-5g-c5cw",
+   "time": 100.8,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munuha8c-76-3qix",
+   "time": 103.2,
+   "fx": "speedlines",
+   "hold": 0
+  },
+  {
+   "id": "munw2543-5h-h68n",
+   "time": 105.6,
+   "fx": "zoom",
+   "hold": 0
+  },
+  {
+   "id": "munw254j-5i-fep9",
+   "time": 105.6,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munw25ln-5j-qu7t",
+   "time": 106.2,
+   "fx": "zoom",
+   "hold": 0
+  },
+  {
+   "id": "munw25lv-5k-uoma",
+   "time": 106.2,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munuhd24-77-q4pf",
+   "time": 106.8,
+   "fx": "speedlines",
+   "hold": 0
+  },
+  {
+   "id": "munw261u-5l-mta6",
+   "time": 106.8,
+   "fx": "zoom",
+   "hold": 0
+  },
+  {
+   "id": "munw262g-5m-8pjq",
+   "time": 106.8,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munuhdbp-78-y95j",
+   "time": 107.1,
+   "fx": "speedlines",
+   "hold": 0
+  },
+  {
+   "id": "munw26b6-5n-pk34",
+   "time": 107.1,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munw26br-5o-u4yt",
+   "time": 107.1,
+   "fx": "zoom",
+   "hold": 0
+  },
+  {
+   "id": "munuhdk3-79-v2xv",
+   "time": 107.39999999999999,
+   "fx": "speedlines",
+   "hold": 0
+  },
+  {
+   "id": "munw26j2-5p-etxo",
+   "time": 107.39999999999999,
+   "fx": "zoom",
+   "hold": 0
+  },
+  {
+   "id": "munw26j7-5q-as9c",
+   "time": 107.39999999999999,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munw26no-5r-220t",
+   "time": 107.55,
+   "fx": "zoom",
+   "hold": 0
+  },
+  {
+   "id": "munw26no-5s-qjbt",
+   "time": 107.55,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munuhdrz-7a-w37d",
+   "time": 107.7,
+   "fx": "speedlines",
+   "hold": 0
+  },
+  {
+   "id": "munw26si-5t-linl",
+   "time": 107.7,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munw26su-5u-vmha",
+   "time": 107.7,
+   "fx": "zoom",
+   "hold": 0
+  },
+  {
+   "id": "munw26wk-5v-67v5",
+   "time": 107.85,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munw26x6-5w-qxod",
+   "time": 107.85,
+   "fx": "zoom",
+   "hold": 0
+  },
+  {
+   "id": "munuhhmk-7b-zaj1",
+   "time": 112.8,
+   "fx": "spin",
+   "hold": 0
+  },
+  {
+   "id": "munw2ani-5x-yiw4",
+   "time": 112.8,
+   "fx": "zoom",
+   "hold": 0
+  },
+  {
+   "id": "munw2ann-5y-nf0q",
+   "time": 112.8,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munuhjg3-7c-wgm2",
+   "time": 115.05,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munuhkjw-7d-7znk",
+   "time": 116.55,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munuhkt8-7e-wd87",
+   "time": 116.85,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munuhl1g-7f-lt7q",
+   "time": 117.14999999999999,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munuhl64-7g-heyl",
+   "time": 117.3,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munw2eb8-5z-e2tv",
+   "time": 117.44999999999999,
+   "fx": "strobe",
+   "hold": 0
+  },
+  {
+   "id": "munuhlbn-7h-uddu",
+   "time": 117.6,
+   "fx": "spin",
+   "hold": 0
+  },
+  {
+   "id": "munuhoz8-7i-l3gj",
+   "time": 122.25,
+   "fx": "colorflash",
+   "hold": 0
+  },
+  {
+   "id": "munw2i0j-60-zzcq",
+   "time": 122.25,
+   "fx": "speedlines",
+   "hold": 0
+  },
+  {
+   "id": "munuhqtw-7j-4v6e",
+   "time": 124.64999999999999,
+   "fx": "spin",
+   "hold": 0
+  },
+  {
+   "id": "munumxsk-8o-k2v7",
+   "time": 126.14999999999999,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munumxt2-8p-za1n",
+   "time": 126.14999999999999,
+   "fx": "shockwave",
+   "hold": 0
+  },
+  {
+   "id": "munumy10-8q-lmgn",
+   "time": 126.44999999999999,
+   "fx": "shockwave",
+   "hold": 0
+  },
+  {
+   "id": "munumy1e-8r-tvag",
+   "time": 126.44999999999999,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munumy9l-8s-bzje",
+   "time": 126.75,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munumya8-8t-nhbx",
+   "time": 126.75,
+   "fx": "shockwave",
+   "hold": 0
+  },
+  {
+   "id": "munumydv-8u-ht1l",
+   "time": 126.89999999999999,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munumyeq-8v-3lrg",
+   "time": 126.89999999999999,
+   "fx": "shockwave",
+   "hold": 0
+  },
+  {
+   "id": "munuhssm-7k-0tva",
+   "time": 127.19999999999999,
+   "fx": "shockwave",
+   "hold": 0
+  },
+  {
+   "id": "munuhstn-7l-4moc",
+   "time": 127.19999999999999,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munuhukk-7m-d9zx",
+   "time": 129.45,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munuhulx-7n-6xb1",
+   "time": 129.6,
+   "fx": "shockwave",
+   "hold": 0
+  },
+  {
+   "id": "munuhwhn-7o-x11w",
+   "time": 132,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munuhwi5-7p-gmkr",
+   "time": 132,
+   "fx": "shockwave",
+   "hold": 0
+  },
+  {
+   "id": "munuhwqt-7q-6dkp",
+   "time": 132.29999999999998,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munuhwqz-7r-v71u",
+   "time": 132.29999999999998,
+   "fx": "shockwave",
+   "hold": 0
+  },
+  {
+   "id": "munuhx03-7s-49kd",
+   "time": 132.6,
+   "fx": "shockwave",
+   "hold": 0
+  },
+  {
+   "id": "munuhx0o-7t-xj16",
+   "time": 132.75,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munuhx8g-7u-sfdn",
+   "time": 132.9,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munuhx8z-7v-mq71",
+   "time": 133.04999999999998,
+   "fx": "shockwave",
+   "hold": 0
+  },
+  {
+   "id": "munuhxh5-7w-j4gr",
+   "time": 133.35,
+   "fx": "shockwave",
+   "hold": 0
+  },
+  {
+   "id": "munuhxhh-7x-50y7",
+   "time": 133.35,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munuhxp2-7y-1hiq",
+   "time": 133.5,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munuhxp8-7z-gw9n",
+   "time": 133.5,
+   "fx": "shockwave",
+   "hold": 0
+  },
+  {
+   "id": "munuhxx0-80-4pow",
+   "time": 133.79999999999998,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munuhxx8-81-3u9a",
+   "time": 133.79999999999998,
+   "fx": "shockwave",
+   "hold": 0
+  },
+  {
+   "id": "munuhy44-82-6z1e",
+   "time": 134.1,
+   "fx": "shockwave",
+   "hold": 0
+  },
+  {
+   "id": "munuhy5h-83-0nzf",
+   "time": 134.1,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munuhycr-84-f3wp",
+   "time": 134.4,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munuhygz-85-sllo",
+   "time": 134.54999999999998,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munuhyly-86-dvgt",
+   "time": 134.7,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munuhyqr-87-jwam",
+   "time": 134.85,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munuhyv7-88-sdiq",
+   "time": 135.15,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munuhyzg-89-48ja",
+   "time": 135.29999999999998,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munuhz3j-8a-ioxo",
+   "time": 135.45,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munuhz70-8b-xwks",
+   "time": 135.45,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munuhzah-8c-fr1l",
+   "time": 135.6,
+   "fx": "shockwave",
+   "hold": 0
+  },
+  {
+   "id": "munuhzf4-8d-76rv",
+   "time": 135.75,
+   "fx": "shockwave",
+   "hold": 0
+  },
+  {
+   "id": "munuhzj9-8e-ps1o",
+   "time": 135.9,
+   "fx": "shockwave",
+   "hold": 0
+  },
+  {
+   "id": "munuhzng-8f-y8tw",
+   "time": 136.04999999999998,
+   "fx": "shockwave",
+   "hold": 0
+  },
+  {
+   "id": "munuhzrk-8g-qpyd",
+   "time": 136.2,
+   "fx": "shockwave",
+   "hold": 0
+  },
+  {
+   "id": "munuhzto-8h-ia55",
+   "time": 136.35,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munuhzx8-8i-4svn",
+   "time": 136.5,
+   "fx": "shockwave",
+   "hold": 0
+  },
+  {
+   "id": "munui003-8j-frr0",
+   "time": 136.5,
+   "fx": "shake",
+   "hold": 0
+  },
+  {
+   "id": "munui03w-8k-g925",
+   "time": 136.65,
+   "fx": "shockwave",
+   "hold": 0
+  }
+ ],
+ "vizEvents": [],
+ "lookEvents": [
+  {
+   "id": "mumdnc33-w-jvt6",
+   "time": 0.8999999999999999,
+   "kind": "style",
+   "value": "minimal"
+  },
+  {
+   "id": "mumdndax-x-w5m9",
+   "time": 2.4,
+   "kind": "style",
+   "value": "minimal"
+  },
+  {
+   "id": "mumaha4x-6o-ncsy",
+   "time": 33.6,
+   "kind": "style",
+   "value": "pop"
+  },
+  {
+   "id": "mumahhjo-6p-psiv",
+   "time": 43.199999999999996,
+   "kind": "style",
+   "value": "impact"
+  },
+  {
+   "id": "mumahl7y-6q-ahe3",
+   "time": 47.85,
+   "kind": "style",
+   "value": "glitch"
+  },
+  {
+   "id": "mumahsnn-6s-61cv",
+   "time": 57.599999999999994,
+   "kind": "style",
+   "value": "kinetic"
+  },
+  {
+   "id": "mumdvh9a-1y-wit7",
+   "time": 64.35,
+   "kind": "style",
+   "value": "minimal"
+  },
+  {
+   "id": "mumahy93-6t-axl4",
+   "time": 64.8,
+   "kind": "style",
+   "value": "pop"
+  },
+  {
+   "id": "mumdvj1s-1z-ckf0",
+   "time": 66.6,
+   "kind": "style",
+   "value": "minimal"
+  }
+ ],
+ "audio": {
+  "id": "mul2d7zd-9-omd3",
+  "name": "music_bgm_200.mp3",
+  "mime": "audio/mpeg"
+ },
+ "backgrounds": [],
+ "characters": [
+  {
+   "id": "mum6yt99-44-h7ka",
+   "name": "デフォルト.png",
+   "mime": "image/webp",
+   "faceY": 0.14,
+   "scale": 1.1,
+   "flip": false,
+   "enabled": true,
+   "offsetX": 0,
+   "offsetY": 0,
+   "media": "munse23n-j-un25"
+  },
+  {
+   "id": "mum724h2-45-0sks",
+   "name": "キャー.png",
+   "mime": "image/webp",
+   "faceY": 0.18,
+   "scale": 1,
+   "flip": false,
+   "enabled": true,
+   "offsetX": 0,
+   "offsetY": 0,
+   "media": "munsebb5-k-4e9s"
+  },
+  {
+   "id": "mum72b4z-46-ma76",
+   "name": "ジト目.png",
+   "mime": "image/webp",
+   "faceY": 0.18,
+   "scale": 1,
+   "flip": false,
+   "enabled": true,
+   "offsetX": 0,
+   "offsetY": 0,
+   "media": "munseh9z-l-tx0m"
+  },
+  {
+   "id": "mum73en9-53-w3w5",
+   "name": "ムッとした顔.png",
+   "mime": "image/webp",
+   "faceY": 0.18,
+   "scale": 1,
+   "flip": false,
+   "enabled": true,
+   "offsetX": 0,
+   "offsetY": 0,
+   "media": "munsemf5-m-jt3s"
+  },
+  {
+   "id": "mumdh6u3-q-0pvh",
+   "name": "ニコニコ.png",
+   "mime": "image/webp",
+   "faceY": 0.18,
+   "scale": 1.6,
+   "offsetX": 0,
+   "offsetY": 0.5,
+   "flip": false,
+   "enabled": true,
+   "media": "munsep59-n-ajaq"
+  },
+  {
+   "id": "munu68ew-3d-6et0",
+   "name": "デフォルメ_プンプン.png",
+   "mime": "image/webp",
+   "faceY": 0.3,
+   "scale": 1,
+   "offsetX": 0,
+   "offsetY": 0,
+   "flip": false,
+   "enabled": true
+  },
+  {
+   "id": "munu6cp1-3e-7k4t",
+   "name": "デフォルメ_キャ.png",
+   "mime": "image/webp",
+   "faceY": 0.3,
+   "scale": 1,
+   "offsetX": 0,
+   "offsetY": 0,
+   "flip": false,
+   "enabled": true
+  }
+ ],
+ "mmdModels": []
+}

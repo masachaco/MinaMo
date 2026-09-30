@@ -1,0 +1,44 @@
+{
+  "project": "demo.minamo.json",
+  "start": 22.5,
+  "audio": {
+    "file": "music_bgm_200.mp3"
+  },
+  "characters": [
+    {
+      "id": "mum6yt99-44-h7ka",
+      "name": "デフォルト.png",
+      "file": "chara/default.webp"
+    },
+    {
+      "id": "mum724h2-45-0sks",
+      "name": "キャー.png",
+      "file": "chara/kya.webp"
+    },
+    {
+      "id": "mum72b4z-46-ma76",
+      "name": "ジト目.png",
+      "file": "chara/jitome.webp"
+    },
+    {
+      "id": "mum73en9-53-w3w5",
+      "name": "ムッとした顔.png",
+      "file": "chara/mutto.webp"
+    },
+    {
+      "id": "mumdh6u3-q-0pvh",
+      "name": "ニコニコ.png",
+      "file": "chara/nikoniko.webp"
+    },
+    {
+      "id": "munu68ew-3d-6et0",
+      "name": "デフォルメ_プンプン.png",
+      "file": "chara/chibi-punpun.webp"
+    },
+    {
+      "id": "munu6cp1-3e-7k4t",
+      "name": "デフォルメ_キャ.png",
+      "file": "chara/chibi-kya.webp"
+    }
+  ]
+}

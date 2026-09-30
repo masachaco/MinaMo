@@ -1,0 +1,29 @@
+# dependencies / build output
+node_modules
+dist
+
+# media: music, renders and exported videos stay out of git
+*.wav
+*.mp3
+*.m4a
+*.aac
+*.flac
+*.ogg
+*.mp4
+*.webm
+*.mov
+# …except the demo project's song (public/demo, served to first-time visitors)
+!public/demo/*.mp3
+
+# test / debug output
+test-out
+*.log
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+
+# MMD test assets (local only)
+/models/
+/poses/
+/motions/
