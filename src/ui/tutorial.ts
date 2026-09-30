@@ -64,12 +64,15 @@ const tapWatch = new WeakSet<App>();
 
 const kbd = (k: string) => `<kbd>${k}</kbd>`;
 
-/** The line the lyric steps use: the demo's 「なんか爽やかな」 (a rest before it), else the first timed line with a few characters. */
-function pickLine(app: App): number {
+/**
+ * A line for a lyric step: the named demo line (both have a rest before them, so REC does not warn about going back),
+ * else the first timed line with a few characters (other than `not`).
+ */
+function pickLine(app: App, name = 'なんか爽やかな', not = -1): number {
   const ls = app.project.lines;
-  const named = ls.findIndex((l) => l.text === 'なんか爽やかな');
+  const named = ls.findIndex((l) => l.text === name);
   if (named >= 0) return named;
-  const timed = ls.findIndex((l) => l.times[0] != null && lineChars(l).length >= 4);
+  const timed = ls.findIndex((l, i) => i !== not && l.times[0] != null && lineChars(l).length >= 4);
   return timed >= 0 ? timed : ls.length ? 0 : -1;
 }
 
@@ -104,6 +107,8 @@ function showKeyGroup(prefix: string) {
 
 function buildSteps(app: App, t: Tour): Step[] {
   const line = pickLine(app);
+  const lineE = pickLine(app, '君の洗濯物', line);
+  const lineEText = lineE >= 0 ? app.project.lines[lineE].text : '';
   const lineText = line >= 0 ? app.project.lines[line].text : '';
   const cueSeek = () => seekBefore(app, line);
   return [
@@ -162,6 +167,21 @@ function buildSteps(app: App, t: Tour): Step[] {
         やり直すときは ${kbd('Ctrl')}+${kbd('Z')}（録音ごと戻ります）。`,
       task: '再生して確かめる',
       done: () => app.engine.playing,
+    },
+    {
+      title: '1行ずつ出す',
+      target: '#prompter',
+      enter: () => {
+        stopAll(app);
+        cueLine(app, lineE);
+        t.taps = 0;
+      },
+      body: `1行まとめて出したいときは ${kbd('Enter')}。行の頭で1回押すだけで、その行が出ます${lineEText ? `（次は「${lineEText}」）` : ''}。<br>
+        ${kbd('Shift')}+${kbd('R')} で REC → 歌い出しに合わせて ${kbd('Enter')} → ${kbd('Esc')} で止めます。<br>
+        <span class="dim">1文字ずつ（${kbd('Space')}）と1行ずつ（${kbd('Enter')}）は、行ごとに混ぜて使えます。</span>`,
+      task: 'REC して Enter で1行出し、Esc で止める',
+      done: () => t.taps > 0 && !app.recording,
+      auto: true,
     },
     {
       title: 'エフェクトを付ける',

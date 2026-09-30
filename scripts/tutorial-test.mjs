@@ -82,7 +82,24 @@ await page.waitForFunction(() => document.querySelector('.tut-task.done'), null,
 check('playing ticks the check step', (await card(page))?.task?.includes('できました'));
 await next(page);
 
-check('step: effect', await waitTitle(page, 'エフェクトを付ける'));
+check('step: one line with Enter', await waitTitle(page, '1行ずつ出す'));
+await snap(page);
+const beforeE = await page.evaluate(() => {
+  const app = window.app, i = app.project.lines.findIndex((l) => l.text === '君の洗濯物');
+  return { i, start: app.project.lines[i].times[0], cursorLine: app.targets()[app.lyricCursor]?.line, t: app.time };
+});
+check('the Enter step cues its line', beforeE.i >= 0 && beforeE.cursorLine === beforeE.i && beforeE.t < beforeE.start, JSON.stringify(beforeE));
+await page.keyboard.press('Shift+R');
+await page.waitForFunction(() => window.app.recording, null, { timeout: 5000 });
+await page.waitForFunction((t0) => window.app.time > t0 - 0.1, beforeE.start, { timeout: 15000 }).catch(() => {});
+await page.keyboard.press('Enter');
+await page.waitForTimeout(300);
+await page.keyboard.press('Escape');
+const afterE = await page.evaluate((i) => window.app.project.lines[i].times, beforeE.i);
+check('Enter timed the whole line at once', afterE[0] != null && Math.abs(afterE[0] - beforeE.start) < 0.6 && afterE.slice(1).every((x) => x == null), JSON.stringify(afterE));
+
+
+check('the Enter step moves on after Esc; step: effect', await waitTitle(page, 'エフェクトを付ける'));
 check('the effect step stopped playback', !(await page.evaluate(() => window.app.engine.playing)));
 await snap(page);
 const fx0 = await page.evaluate(() => window.app.project.lyricEvents.length);
