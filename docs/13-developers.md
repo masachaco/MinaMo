@@ -88,6 +88,7 @@ Project（JSON、localStorage）+ 素材（IndexedDB）
 `npm run build` の `dist/` をそのまま静的サイトとして置けます（GitHub Pages など）。パスは相対（`vite.config.ts` の `base: './'`）なので、`/<リポジトリ名>/` の下でも動きます。
 `dist/` には `LICENSE` と `THIRD_PARTY_LICENSES.txt`（ビルドに入った npm パッケージのライセンス文。ビルド時に自動生成）が入ります。デモ素材の扱いは `public/demo/LICENSE.md`。
 フォントは Google Fonts から読み込みます（Anton・Cormorant Garamond・Dela Gothic One・DotGothic16・M PLUS Rounded 1c・Mochiy Pop One・Montserrat・Noto Sans JP・Orbitron・Share Tech Mono・Shippori Mincho B1・Zen Kaku Gothic New。すべて SIL Open Font License）。
+共有カード（Open Graph / X のカード）は `index.html` の `og:` / `twitter:` のメタタグと `public/og.jpg`（1200×630）です。画像は開発サーバー起動中に `node scripts/og-card.mjs` で作り直せます。`og:image` は公開 URL（GitHub Pages）の絶対パスです。
 
 ## 演出の追加
 
