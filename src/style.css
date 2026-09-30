@@ -26,7 +26,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 /* ---------- top bar ---------- */
 .topbar { grid-column: 1 / -1; display: flex; align-items: center; gap: 16px; padding: 0 14px; background: linear-gradient(#15151f, #101017); border-bottom: 1px solid var(--line); }
 .brand { font-family: "Montserrat", sans-serif; font-weight: 800; letter-spacing: .08em; font-size: 15px; white-space: nowrap; }
-.brand b { color: var(--accent); }
+.brand b { color: var(--accent2); }
 .brand small { font-weight: 500; color: var(--dim); margin-left: 2px; font-size: 10px; letter-spacing: .3em; }
 .brand { display: flex; align-items: center; gap: 7px; }
 .brand .logo { color: var(--accent2); width: 20px; height: 20px; flex: none; }
