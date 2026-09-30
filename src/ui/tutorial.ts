@@ -42,6 +42,8 @@ interface Step {
   auto?: boolean;
   /** Last step: 新規 / keep the demo. */
   final?: boolean;
+  /** The result shows in the preview: dim lightly and keep the card off the preview (top left). */
+  watch?: boolean;
 }
 
 interface Tour {
@@ -116,6 +118,7 @@ function buildSteps(app: App, t: Tour): Step[] {
   const recStep = (o: { title: string; mode: Mode; group: string; body: string; task: string; count: () => number }): Step => ({
     title: o.title,
     target: '#rightPanel',
+    watch: true,
     enter: () => {
       stopAll(app);
       app.setMode(o.mode);
@@ -131,28 +134,30 @@ function buildSteps(app: App, t: Tour): Step[] {
   return [
     {
       title: 'ようこそ！',
-      body: `デモのプロジェクト（曲・歌詞・立ち絵・演出入り）が開いています。<br>
-        数分で <b>歌に合わせて歌詞を出す</b>・<b>エフェクトを付ける</b> をひととおり体験できます。<br>
+      body: `デモのプロジェクト（曲・歌詞・立ち絵・演出入り）が開いています。再生位置は、歌い出しの少し前です。<br>
+        数分で <b>歌に合わせて歌詞を出す</b> ことと、<b>エフェクト・立ち絵・FX・カメラをキーで操る</b> ことをひととおり体験できます。<br>
         <span class="dim">画面はそのまま操作できます。いつでも「スキップ」で終われます。</span>`,
     },
     {
       title: 'まずは見てみる',
       target: '#btnPlay',
-      body: `▶ ボタンか ${kbd('Space')} で再生・停止します。デモがどう動くか見てみましょう。`,
+      watch: true,
+      body: `▶ ボタンか ${kbd('Space')} で再生・停止します。歌い出しから、デモがどう動くか見てみましょう。`,
       task: '再生してみる',
       done: () => app.engine.playing,
     },
     {
       title: 'タイムライン',
       target: '.timeline-wrap',
-      body: `トラックごとの記録です。◆ はキーを叩いて記録した演出、帯は表示中の歌詞やテロップ。<br>
-        クリックで選ぶと、右下のインスペクタで時刻や値を直せます。`,
+      body: `画面下は、<b>トラック</b>（歌詞・テロップ・立ち絵・カメラ…演出の種類ごとの段）ごとの記録です。
+        ◆ はキーを叩いて記録した演出、帯は表示中の歌詞やテロップ。<br>
+        クリックで選ぶと、右下の <b>インスペクタ</b>（選んだものの設定欄）で時刻や値を直せます。`,
     },
     {
       title: 'トラックを選ぶ',
       target: '#modeTabs',
       enter: () => stopAll(app),
-      body: `上のタブが、キーで演出する（録音する）トラックです。<br>「歌詞」を選んでください（${kbd('Tab')} でも切り替わります）。`,
+      body: `上のタブで、キーで演出する（録音する）トラックを選びます。<br>「歌詞」を選んでください（${kbd('Tab')} でも切り替わります）。`,
       task: '「歌詞」トラックを選ぶ',
       done: () => app.mode === 'lyrics',
       auto: true,
@@ -166,9 +171,10 @@ function buildSteps(app: App, t: Tour): Step[] {
         cueLine(app, line);
         t.taps = 0;
       },
-      body: `次に出る文字がここで光っています${lineText ? `（「${lineText}」）` : ''}。<br>
-        ${kbd('Shift')}+${kbd('R')} で REC → 歌に合わせて ${kbd('Space')} を <b>1文字ずつ</b> 押します
-        （1行まとめて出すなら ${kbd('Enter')}）。<br>押し終わったら ${kbd('Esc')} で止めます。`,
+      watch: true,
+      body: `次に出る文字が、下の欄で光っています${lineText ? `（「${lineText}」）` : ''}。<br>
+        ${kbd('Shift')}+${kbd('R')} で <b>REC</b>（録音）を始めると、少し前から再生が始まります。
+        歌い出したら、歌に合わせて ${kbd('Space')} を <b>1文字ずつ</b> 押します。<br>押し終わったら ${kbd('Esc')} で止めます。`,
       task: 'REC して Space で歌詞を出し、Esc で止める',
       done: () => t.taps > 0 && !app.recording,
       auto: true,
@@ -176,6 +182,7 @@ function buildSteps(app: App, t: Tour): Step[] {
     {
       title: '確かめる',
       target: '#frame',
+      watch: true,
       enter: () => {
         stopAll(app);
         cueSeek();
@@ -193,6 +200,7 @@ function buildSteps(app: App, t: Tour): Step[] {
         cueLine(app, lineE);
         t.taps = 0;
       },
+      watch: true,
       body: `1行まとめて出したいときは ${kbd('Enter')}。行の頭で1回押すだけで、その行が出ます${lineEText ? `（次は「${lineEText}」）` : ''}。<br>
         ${kbd('Shift')}+${kbd('R')} で REC → 歌い出しに合わせて ${kbd('Enter')} → ${kbd('Esc')} で止めます。<br>
         <span class="dim">1文字ずつ（${kbd('Space')}）と1行ずつ（${kbd('Enter')}）は、行ごとに混ぜて使えます。</span>`,
@@ -211,8 +219,9 @@ function buildSteps(app: App, t: Tour): Step[] {
         showKeyGroup('EFFECT');
         t.base = app.project.lyricEvents.length;
       },
+      watch: true,
       body: `右のキーパネルは、いまのトラックで使えるキーの一覧です。歌詞トラックの ${kbd('Q')}〜${kbd('T')} は
-        文字のエフェクト（影・縁取り・グロー…。押すたびにオン / オフ）。<br>
+        文字のエフェクト（影・縁取り・グロー…）。押すとその時点からかかり、もう一度押すと消えます（${kbd('Y')} で全部オフ）。<br>
         ${kbd('Shift')}+${kbd('R')} で REC して、歌の途中で ${kbd('Q')}〜${kbd('T')} を押してみましょう。${kbd('Esc')} で止めます。<br>
         <span class="dim">REC 中の ${kbd('Space')} は歌詞の入力になるので、止めるのは ${kbd('Esc')} で。</span>`,
       task: 'REC してエフェクトのキーを押し、Esc で止める',
@@ -364,6 +373,7 @@ function render(t: Tour) {
   ];
   t.card.replaceChildren(...parts.filter((x) => x !== null));
   t.card.classList.toggle('center', !s.target);
+  t.hole.classList.toggle('light', !!s.watch);
 }
 
 function frame(t: Tour) {
@@ -395,6 +405,12 @@ function frame(t: Tour) {
   t.shade.hidden = true;
   t.hole.hidden = false;
   Object.assign(t.hole.style, { left: `${r.left - pad}px`, top: `${r.top - pad}px`, width: `${r.width + pad * 2}px`, height: `${r.height + pad * 2}px` });
+  // watch steps: the card sits top left (over the left panel), off the preview where the result shows
+  if (s.watch) {
+    t.card.style.left = '8px';
+    t.card.style.top = `${Math.min(58, vh - ch - 8)}px`;
+    return;
+  }
   // the card next to the lit part: below, above, then the side with more room
   const gap = 14;
   let x: number, y: number;

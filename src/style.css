@@ -205,6 +205,7 @@ textarea.lyrics { min-height: 220px; resize: vertical; font-size: 13px; line-hei
 /* ---------- tutorial ---------- */
 .tut-shade { position: fixed; inset: 0; background: rgba(4, 4, 10, .55); pointer-events: none; z-index: 900; }
 .tut-hole { position: fixed; border-radius: 10px; box-shadow: 0 0 0 9999px rgba(4, 4, 10, .55), 0 0 0 2px var(--accent2), 0 0 18px rgba(8, 217, 214, .5); pointer-events: none; z-index: 900; transition: left .25s, top .25s, width .25s, height .25s; }
+.tut-hole.light { box-shadow: 0 0 0 9999px rgba(4, 4, 10, .18), 0 0 0 2px var(--accent2), 0 0 18px rgba(8, 217, 214, .5); }
 .tut-card { position: fixed; z-index: 901; width: 380px; max-width: calc(100vw - 16px); background: #161621; border: 1px solid var(--accent2); border-radius: 12px; padding: 12px 14px 12px; box-shadow: 0 12px 40px rgba(0, 0, 0, .6); line-height: 1.6; }
 .tut-card.center { width: 440px; }
 .tut-head { display: flex; align-items: center; justify-content: space-between; font-size: 11px; color: var(--dim); }
