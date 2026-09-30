@@ -3,6 +3,7 @@
 // skipped. Opens on the first visit (the demo was just opened) and from the ？ button.
 
 import type { App } from '../app';
+import type { Mode } from '../perform';
 import { lastTimeBefore, lineChars, lineFirstTarget } from '../core/lyrics';
 import { lsGetMigrated } from '../core/storage';
 import { h } from './dom';
@@ -52,8 +53,8 @@ interface Tour {
   card: HTMLElement;
   /** Lyric taps since the lyric step started. */
   taps: number;
-  /** Lyric effect events when the effect step started. */
-  fx0: number;
+  /** Count of the step's events when it started (the task is done once it grows). */
+  base: number;
   shownDone: boolean;
   autoTimer: number;
   raf: number;
@@ -111,6 +112,22 @@ function buildSteps(app: App, t: Tour): Step[] {
   const lineEText = lineE >= 0 ? app.project.lines[lineE].text : '';
   const lineText = line >= 0 ? app.project.lines[line].text : '';
   const cueSeek = () => seekBefore(app, line);
+  /** A hands-on step on another track: switch to it, cue a spot with singing, REC, press its keys, Esc. */
+  const recStep = (o: { title: string; mode: Mode; group: string; body: string; task: string; count: () => number }): Step => ({
+    title: o.title,
+    target: '#rightPanel',
+    enter: () => {
+      stopAll(app);
+      app.setMode(o.mode);
+      seekBefore(app, lineE >= 0 ? lineE : line);
+      requestAnimationFrame(() => showKeyGroup(o.group)); // the key panel re-renders for the track first
+      t.base = o.count();
+    },
+    body: o.body,
+    task: o.task,
+    done: () => o.count() > t.base && !app.recording,
+    auto: true,
+  });
   return [
     {
       title: 'ようこそ！',
@@ -192,23 +209,58 @@ function buildSteps(app: App, t: Tour): Step[] {
         cueSeek();
         app.setCursorFollow(true); // back to following the playhead (the lyric step pinned the input position)
         showKeyGroup('EFFECT');
-        t.fx0 = app.project.lyricEvents.length;
+        t.base = app.project.lyricEvents.length;
       },
       body: `右のキーパネルは、いまのトラックで使えるキーの一覧です。歌詞トラックの ${kbd('Q')}〜${kbd('T')} は
         文字のエフェクト（影・縁取り・グロー…。押すたびにオン / オフ）。<br>
         ${kbd('Shift')}+${kbd('R')} で REC して、歌の途中で ${kbd('Q')}〜${kbd('T')} を押してみましょう。${kbd('Esc')} で止めます。<br>
         <span class="dim">REC 中の ${kbd('Space')} は歌詞の入力になるので、止めるのは ${kbd('Esc')} で。</span>`,
       task: 'REC してエフェクトのキーを押し、Esc で止める',
-      done: () => app.project.lyricEvents.length > t.fx0 && !app.recording,
+      done: () => app.project.lyricEvents.length > t.base && !app.recording,
       auto: true,
     },
-    {
-      title: 'ほかのトラックも同じ',
-      target: '#modeTabs',
-      enter: () => stopAll(app),
-      body: `立ち絵・カメラ・FX・ルック…も「トラックを選ぶ → REC → キーを叩く」の繰り返しです。<br>
-        録音は重ね録りなので、何度でも演出を足していけます。`,
-    },
+    recStep({
+      title: '立ち絵を切り替える',
+      mode: 'chara',
+      group: 'CHARACTER',
+      body: `立ち絵トラックに切り替えました（自分で切り替えるときは ${kbd('Tab')} か上のタブ）。<br>
+        ${kbd('1')}〜${kbd('9')} が立ち絵（表情違いなど）の切り替えです。${kbd('Shift')}+${kbd('R')} で REC して、
+        歌に合わせて数字キーを押してみましょう。${kbd('Esc')} で止めます。<br>
+        <span class="dim">立ち絵がないプロジェクトでは「次へ」で進んでください。</span>`,
+      task: 'REC して数字キーで立ち絵を切り替え、Esc で止める',
+      count: () => app.project.charaEvents.filter((e) => e.kind === 'char').length,
+    }),
+    recStep({
+      title: '立ち絵の位置を変える',
+      mode: 'chara',
+      group: 'POSITION',
+      body: `同じ立ち絵トラックの ${kbd('A')} ${kbd('S')} ${kbd('D')} ${kbd('F')} で、立ち絵の位置が左・中央・右・2人になります。
+        歌詞は立ち絵のいない側に大きく出ます。<br>
+        ${kbd('Shift')}+${kbd('R')} で REC して押してみましょう。${kbd('Esc')} で止めます。`,
+      task: 'REC して A S D F で位置を変え、Esc で止める',
+      count: () => app.project.charaEvents.filter((e) => e.kind === 'pos').length,
+    }),
+    recStep({
+      title: 'FX を出す',
+      mode: 'fx',
+      group: 'FX',
+      body: `FX トラックに切り替えました。フラッシュ・シェイク・ズーム・グリッチ…など、画面全体にかかる一発ものです
+        （${kbd('Q')} ${kbd('W')} ${kbd('E')} ${kbd('R')} …）。⏵ の付いたものは長押しで続きます。<br>
+        ${kbd('Shift')}+${kbd('R')} で REC して、曲のアクセントで叩いてみましょう。${kbd('Esc')} で止めます。`,
+      task: 'REC して FX のキーを押し、Esc で止める',
+      count: () => app.project.fxEvents.length,
+    }),
+    recStep({
+      title: 'カメラを切り替える',
+      mode: 'camera',
+      group: 'FRAMING',
+      body: `カメラトラックに切り替えました。${kbd('A')}〜${kbd('J')} がフレーミング（ワイド・全身・バスト・アップ…）、
+        ${kbd('Q')}〜${kbd('I')} がカメラの動き（ズームイン・パン・手ブレ…）です。<br>
+        ${kbd('Shift')}+${kbd('R')} で REC して切り替えてみましょう。${kbd('Esc')} で止めます。<br>
+        <span class="dim">テロップ・ビジュアル・ルックも「トラックを選ぶ → REC → キーを叩く」の同じ流れです。録音は重ね録りなので、何度でも足していけます。</span>`,
+      task: 'REC してカメラのキーを押し、Esc で止める',
+      count: () => app.project.camEvents.length,
+    }),
     {
       title: '止めたまま置く・直す',
       target: '.timeline-wrap',
@@ -250,7 +302,7 @@ export function startTutorial(app: App) {
     if ((e.target as HTMLElement).closest('button')) e.preventDefault();
   });
   document.body.append(shade, hole, card);
-  const t: Tour = { app, steps: [], i: -1, shade, hole, card, taps: 0, fx0: 0, shownDone: false, autoTimer: 0, raf: 0 };
+  const t: Tour = { app, steps: [], i: -1, shade, hole, card, taps: 0, base: 0, shownDone: false, autoTimer: 0, raf: 0 };
   t.steps = buildSteps(app, t);
   tour = t;
   go(0);

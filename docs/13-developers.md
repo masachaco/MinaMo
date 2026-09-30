@@ -28,7 +28,7 @@ npm run typecheck
 | `npm run test:edit` | REC なしの編集（ダブルクリック配置・キーで書き換え）、一括クオンタイズ、立ち絵の画像の差し替え、再生速度 |
 | `npm run test:plugin` | プラグイン（歌詞スタイル専用・ルック専用・カメラ・パレット・エフェクト・モーション・FX）のキー割り当て・メニュー・パネル・描画 |
 | `npm run test:demo` | 初回表示のデモ（曲・立ち絵の読み込み、再読み込みで取り直さない）、デモを開く・新規、旧名（MV Otoge Creator）の保存データの引き継ぎ |
-| `npm run test:tutorial` | 初回のチュートリアル（再生 → 歌詞トラック → `Space` で1文字ずつ → `Enter` で1行 → エフェクト → 新規）、スキップ、「？」 |
+| `npm run test:tutorial` | 初回のチュートリアル（再生 → 歌詞トラック → `Space` で1文字ずつ → `Enter` で1行 → エフェクト → 立ち絵の切り替え・位置 → FX → カメラ → 新規）、スキップ、「？」 |
 | `npm run test:export` | 1秒の MP4 書き出し |
 | `npm run test:mmd` | MMD（手元の素材の場所を `MMD_MODEL` / `MMD_MOTION`（任意で `MMD_CAMERA`）か、`models/mmd-test.json` で指定したときだけ。素材はコミットしない） |
 | `node scripts/shot.mjs test-out "style=neon&bg=1" "4,5.3"` | テスト用ページ（`test.html`）でフレームを PNG に |

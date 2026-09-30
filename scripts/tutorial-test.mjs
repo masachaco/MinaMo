@@ -110,10 +110,33 @@ await page.waitForTimeout(600);
 await page.keyboard.press('Escape');
 const fx1 = await page.evaluate(() => window.app.project.lyricEvents.map((e) => e.value));
 check('an effect key while recording adds a lyric effect', fx1.length > fx0, JSON.stringify(fx1));
-check('the effect step moves on after Esc', await waitTitle(page, 'ほかのトラックも同じ'));
-await snap(page);
-await next(page);
-check('step: place without REC', await waitTitle(page, '止めたまま置く・直す'));
+// hands-on steps on the other tracks: REC, press one of their keys, Esc → the step moves on by itself
+const counts = () => page.evaluate(() => {
+  const p = window.app.project;
+  return { char: p.charaEvents.filter((e) => e.kind === 'char').length, pos: p.charaEvents.filter((e) => e.kind === 'pos').length, fx: p.fxEvents.length, cam: p.camEvents.length, mode: window.app.mode };
+});
+const trackSteps = [
+  ['立ち絵を切り替える', 'chara', 'Digit3', 'char'],
+  ['立ち絵の位置を変える', 'chara', 'KeyD', 'pos'],
+  ['FX を出す', 'fx', 'KeyQ', 'fx'],
+  ['カメラを切り替える', 'camera', 'KeyF', 'cam'],
+];
+for (const [i, [title, mode, key, what]] of trackSteps.entries()) {
+  check(i === 0 ? 'the effect step moves on after Esc; step: ' + title : 'step: ' + title, await waitTitle(page, title));
+  await page.waitForTimeout(300);
+  await snap(page);
+  const c0 = await counts();
+  check(`${title}: switched to the ${mode} track`, c0.mode === mode, c0.mode);
+  await page.keyboard.press('Shift+R');
+  await page.waitForFunction(() => window.app.recording, null, { timeout: 5000 });
+  await page.waitForTimeout(600);
+  await page.keyboard.press(key);
+  await page.waitForTimeout(400);
+  await page.keyboard.press('Escape');
+  const c1 = await counts();
+  check(`${title}: the key was recorded`, c1[what] > c0[what], `${c0[what]} → ${c1[what]}`);
+}
+check('the camera step moves on after Esc; step: place without REC', await waitTitle(page, '止めたまま置く・直す'));
 await snap(page);
 await next(page);
 check('step: export', await waitTitle(page, '書き出し'));
