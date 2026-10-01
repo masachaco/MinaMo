@@ -17,7 +17,7 @@ import { getFx, listLookStyles, listLyricStyles, onRegistryChange, type EffectId
 import { charMediaKey, disposeBg, loadBgAsset, loadCharAsset, loadMmdModelAsset, makeMmdCharAsset, type BgAsset, type CharAsset } from './engine/assets';
 import { stateAt } from './engine/channels';
 import { bgIndexAt, compileProject, segmentAt, type Compiled } from './engine/compile';
-import { demoEnabled, loadDemoProject } from './demo';
+import { demoEnabled, loadDemoProject, restoreDemoMedia } from './demo';
 import { cameraOf } from './engine/director';
 import { ensureFonts } from './engine/fonts';
 import { fmtTime } from './engine/lib';
@@ -1476,8 +1476,11 @@ export class App {
   async init() {
     let demoStart = 0;
     const saved = loadProjectLocal();
-    if (saved) this.project = normalizeProject(saved);
-    else if (demoEnabled()) {
+    if (saved) {
+      this.project = normalizeProject(saved);
+      // demo media the browser could not keep (see restoreDemoMedia) are fetched again
+      if (demoEnabled()) await restoreDemoMedia(this.project).catch((e) => console.warn('demo media', e));
+    } else if (demoEnabled()) {
       // first visit: open the demo project (public/demo) and keep it as the saved project
       const demo = await loadDemoProject().catch((e) => {
         console.warn('demo project', e);

@@ -72,7 +72,12 @@ function readBlob(d: IDBDatabase, id: string): Promise<Blob | null> {
   });
 }
 
+// Media also kept in memory for the session: some browsers cannot store blobs in IndexedDB (private browsing,
+// in-app browsers, a full disk), and the project still has to work until the page is closed.
+const memory = new Map<string, Blob>();
+
 export async function putMedia(id: string, blob: Blob): Promise<void> {
+  memory.set(id, blob);
   try {
     const d = await db();
     await new Promise<void>((res, rej) => {
@@ -87,6 +92,8 @@ export async function putMedia(id: string, blob: Blob): Promise<void> {
 }
 
 export async function getMedia(id: string): Promise<Blob | null> {
+  const m = memory.get(id);
+  if (m) return m;
   try {
     const b = await readBlob(await db(), id);
     if (b) return b;
@@ -100,6 +107,7 @@ export async function getMedia(id: string): Promise<Blob | null> {
 }
 
 export async function deleteMedia(id: string): Promise<void> {
+  memory.delete(id);
   try {
     const d = await db();
     await new Promise<void>((res) => {

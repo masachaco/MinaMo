@@ -2,7 +2,7 @@
 // public/demo/demo.json lists a project file (as saved by 保存 (.json)) and the files of its media, keyed by the
 // ids the project uses, so a re-saved project can be dropped in as is. ?demo=0 skips it (tests).
 
-import { putMedia } from './core/storage';
+import { getMedia, putMedia } from './core/storage';
 import type { Project } from './core/types';
 
 interface DemoManifest {
@@ -71,4 +71,37 @@ export async function loadDemoProject(): Promise<DemoProject | null> {
   }
   await Promise.all(jobs);
   return { project: p, start: Number.isFinite(m.start) ? Math.max(0, m.start!) : 0 };
+}
+
+/**
+ * Fetch again the demo's media that a saved project refers to but the browser no longer has (the browser could
+ * not keep them in IndexedDB, or its storage was cleared). Only files stored under the same key as in the demo;
+ * fetches nothing when nothing is missing. Returns how many were restored.
+ */
+export async function restoreDemoMedia(p: Project): Promise<number> {
+  const keys = [p.audio?.id, ...p.characters.filter((c) => c.kind !== 'mmd').map((c) => c.media ?? c.id), ...p.backgrounds.map((b) => b.id)]
+    .filter((k): k is string => !!k);
+  const missing = new Set<string>();
+  for (const k of keys) if (!(await getMedia(k))) missing.add(k);
+  if (!missing.size) return 0;
+  let m: DemoManifest;
+  try {
+    m = await (await get('demo.json')).json();
+  } catch {
+    return 0;
+  }
+  const demo = (await (await get(m.project)).json()) as Project;
+  const files: [string, string][] = []; // [file, key]
+  if (m.audio && demo.audio) files.push([m.audio.file, demo.audio.id]);
+  for (const c of m.characters ?? []) {
+    const ref = demo.characters?.find((x) => x.id === c.id);
+    if (ref && ref.kind !== 'mmd') files.push([c.file, ref.media ?? ref.id]);
+  }
+  for (const g of m.backgrounds ?? []) if (demo.backgrounds?.some((x) => x.id === g.id)) files.push([g.file, g.id]);
+  let n = 0;
+  await Promise.all(files.filter(([, key]) => missing.has(key)).map(async ([file, key]) => {
+    await putMedia(key, await (await get(file)).blob());
+    n++;
+  }));
+  return n;
 }

@@ -145,6 +145,32 @@ const legacy = await p4.evaluate(() => ({
   plugins: localStorage.getItem('minamo:plugins'),
 }));
 check('the former name\'s project, media and settings carry over', legacy.title === 'LEGACY' && legacy.image && legacy.moved && legacy.plugins === '[]', JSON.stringify(legacy));
+
+// a browser that cannot keep blobs in IndexedDB (private browsing, in-app browsers): the demo still opens with its
+// song and 立ち絵, and after a reload the demo media are fetched again (no 見つからない素材)
+const p5 = await (await browser.newContext({ viewport: { width: 1600, height: 1000 } })).newPage();
+p5.on('pageerror', (e) => errors.push(e.message));
+await p5.addInitScript(() => {
+  const put = IDBObjectStore.prototype.put;
+  IDBObjectStore.prototype.put = function (v, k) {
+    if (v instanceof Blob) throw new DOMException('blobs are not supported here', 'DataError');
+    return put.call(this, v, k);
+  };
+  localStorage.setItem('minamo.tutorial', 'done');
+});
+const demoState = () => p5.evaluate(() => ({
+  audio: window.app.engine.duration > 0, chars: window.app.charAssets.size, toast: document.querySelector('#toast').textContent,
+}));
+await p5.goto('http://localhost:5178/');
+await p5.waitForFunction(() => window.app?.project?.audio && window.app.engine.duration > 0 && window.app.charAssets.size > 0, null, { timeout: 30000 }).catch(() => {});
+const nb1 = await demoState();
+check('without IndexedDB blobs the demo still opens (song, 立ち絵)', nb1.audio && nb1.chars > 0 && !nb1.toast.includes('見つからない'), JSON.stringify(nb1));
+await p5.reload();
+await p5.waitForFunction(() => window.app?.project?.audio && window.app.engine.duration > 0 && window.app.charAssets.size > 0, null, { timeout: 30000 }).catch(() => {});
+await p5.waitForTimeout(500);
+const nb2 = await demoState();
+check('…and after a reload the demo media are fetched again', nb2.audio && nb2.chars > 0 && !nb2.toast.includes('見つからない'), JSON.stringify(nb2));
+
 check('no page errors', errors.length === 0, errors.slice(0, 3).join(' | '));
 
 await browser.close();
