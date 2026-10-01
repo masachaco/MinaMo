@@ -27,6 +27,45 @@ check('opens on the FX track', await page.evaluate(() => window.app.mode === 'fx
 check('no horizontal scroll at 390px', st.scrollW <= 390, String(st.scrollW));
 await page.screenshot({ path: 'test-out/mobile-1.png' });
 
+// tutorial (first visit): play → スピン while playing (a try) → REC + スピン (recorded) → done
+const title = () => page.evaluate(() => document.querySelector('.mt-card h3')?.textContent ?? null);
+const waitTitle = (t) => page.waitForFunction((x) => document.querySelector('.mt-card h3')?.textContent === x, t, { timeout: 10000 }).then(() => true, () => false);
+check('the first visit opens the tutorial', (await title()) === 'ようこそ MinaMo へ', String(await title()));
+await page.tap('.mt-actions button:last-child');
+check('tutorial: play', await waitTitle('再生する'));
+await page.tap('#btnPlay');
+check('tutorial: playing moves on to スピン', await waitTitle('再生しながらスピン'));
+const spinKey = await page.evaluate(() => window.app.perfKeyList().find((k) => k.label === 'スピン')?.key);
+await page.waitForTimeout(400);
+check('tutorial: the スピン pad is pointed at', await page.evaluate((k) => document.querySelector('.mt-target')?.dataset.key === k, spinKey));
+await page.screenshot({ path: 'test-out/mobile-tut-1.png' });
+const spins = () => page.evaluate(() => window.app.project.fxEvents.filter((e) => e.fx === 'spin').length);
+const sp0 = await spins();
+await page.tap(`#pads .pad[data-key="${spinKey}"]`);
+check('tutorial: a try moves on to 記録する', await waitTitle('記録する'));
+check('tutorial: the try recorded nothing', (await spins()) === sp0);
+await page.tap('#btnRec');
+await page.waitForFunction(() => window.app.recording, null, { timeout: 5000 });
+await page.waitForTimeout(400);
+check('tutorial: while recording the pointer moves to スピン', await page.evaluate((k) => document.querySelector('.mt-target')?.dataset.key === k, spinKey));
+await page.tap(`#pads .pad[data-key="${spinKey}"]`);
+await page.waitForTimeout(300);
+await page.screenshot({ path: 'test-out/mobile-tut-2.png' });
+await page.tap('#btnRec');
+check('tutorial: REC + スピン recorded it', (await spins()) === sp0 + 1);
+check('tutorial: last step', await waitTitle('記録できました'));
+await page.screenshot({ path: 'test-out/mobile-tut-3.png' });
+await page.tap('.mt-actions button:last-child');
+check('tutorial: closed and remembered', await page.evaluate(() => !document.querySelector('.mt-card') && localStorage.getItem('minamo.mobileTutorial') === 'done'));
+await page.reload();
+await page.waitForFunction(() => window.app?.project?.audio && document.querySelector('#pads .pad'), null, { timeout: 60000 });
+await page.waitForTimeout(500);
+check('tutorial: not shown again', !(await page.$('.mt-card')));
+await page.tap('#btnHelp');
+check('tutorial: ？ opens it again', (await title()) === 'ようこそ MinaMo へ');
+await page.tap('.mt-skip');
+check('tutorial: スキップ closes it', !(await page.$('.mt-card')));
+
 // pads follow the track tabs
 const padsOf = (mode) => page.evaluate((m) => {
   window.app.setMode(m);

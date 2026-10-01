@@ -13,6 +13,7 @@ import { canExport, exportVideo, type ExportJob } from '../export/exporter';
 import { installGlobalApi, loadStoredPlugins } from '../plugin-loader';
 import { MODES, modeInfo, trackStateText, type PerfKey } from '../perform';
 import { $, h, pickFile, toast } from '../ui/dom';
+import { mobileTutorialSeen, startMobileTutorial } from './tutorial';
 
 async function boot() {
   installGlobalApi();
@@ -54,7 +55,10 @@ async function boot() {
     requestAnimationFrame(loop);
   };
   requestAnimationFrame(loop);
-  if (!app.project.audio) toast('☰ から曲を読み込んで始めましょう', 4000);
+  $('#btnHelp').addEventListener('click', () => startMobileTutorial(app));
+  const forced = new URLSearchParams(location.search).get('tutorial') === '1';
+  if (forced || (app.firstVisit && !mobileTutorialSeen())) startMobileTutorial(app);
+  else if (!app.project.audio) toast('☰ から曲を読み込んで始めましょう', 4000);
 }
 
 /** A pad press, as the keyboard key it stands for (App.handleKeyDown reads only these fields). */

@@ -13,7 +13,7 @@ body.m textarea, body.m input { -webkit-user-select: text; user-select: text; fo
 .m-tc #tcTime { font-size: 15px; }
 .m-tc #tcBar { font-size: 10px; color: var(--dim); }
 .m-top .status { flex: 1; margin: 0; font-size: 10px; }
-.m-top button.icon { width: 36px; height: 36px; font-size: 16px; }
+.m-top button.icon { width: 34px; height: 34px; font-size: 15px; flex: none; }
 
 .m-stage { flex: none; height: min(56.25vw, 34dvh); display: flex; align-items: center; justify-content: center; background: #000; overflow: hidden; }
 .m-stage .frame { position: relative; }
@@ -84,3 +84,21 @@ body.m textarea, body.m input { -webkit-user-select: text; user-select: text; fo
 .m-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; font-size: 12px; }
 .m-links a { color: var(--accent2); }
 body.m .toast { bottom: calc(40px + env(safe-area-inset-bottom)); max-width: 90vw; white-space: normal; text-align: center; }
+
+/* tutorial */
+.mt-card {
+  position: fixed; left: 10px; right: 10px; bottom: calc(10px + env(safe-area-inset-bottom)); z-index: 800;
+  background: rgba(18, 18, 28, .96); border: 1px solid var(--accent2); border-radius: 12px; padding: 10px 14px 12px;
+  box-shadow: 0 10px 40px rgba(0,0,0,.6), 0 0 18px rgba(8,217,214,.25);
+}
+.mt-card h3 { margin: 2px 0 4px; font-size: 15px; color: var(--accent2); }
+.mt-card p { margin: 0; font-size: 12.5px; line-height: 1.6; color: #d6d6e4; }
+.mt-head { display: flex; align-items: center; justify-content: space-between; }
+.mt-count { font-family: "Share Tech Mono", monospace; font-size: 11px; color: var(--dim); }
+.mt-skip { background: none; border: 0; color: var(--dim); font-size: 12px; padding: 4px 0; }
+.mt-task { margin-top: 8px; font-size: 13px; font-weight: 700; color: #ffe600; }
+.mt-task.done { color: #6bff9d; }
+.mt-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 8px; }
+.mt-actions button { padding: 7px 14px; }
+.mt-target { position: relative; z-index: 1; outline: 3px solid var(--accent2); outline-offset: 2px; animation: mt-pulse 1s ease-in-out infinite; }
+@keyframes mt-pulse { 50% { outline-color: rgba(8,217,214,.25); } }

@@ -29,7 +29,7 @@ npm run typecheck
 | `npm run test:plugin` | プラグイン（歌詞スタイル専用・ルック専用・カメラ・パレット・エフェクト・モーション・FX）のキー割り当て・メニュー・パネル・描画 |
 | `npm run test:demo` | 初回表示のデモ（曲・立ち絵の読み込み、再読み込みで取り直さない）、デモを開く・新規、旧名（MV Otoge Creator）の保存データの引き継ぎ |
 | `npm run test:tutorial` | 初回のチュートリアル（再生 → 歌詞トラック → `Space` で1文字ずつ → `Enter` で1行 → エフェクト → 立ち絵の切り替え・位置 → FX → カメラ → 新規）、スキップ、「？」 |
-| `npm run test:mobile` | スマホ版（`mobile/`）：スマホの画面サイズでデモを開く、トラックごとのパッド、パッドで録音（歌詞・FX の長押し・立ち絵）、PC 版のページが変わらないこと |
+| `npm run test:mobile` | スマホ版（`mobile/`）：スマホの画面サイズでデモを開く、トラックごとのパッド、チュートリアル（再生中のスピン＝試し弾き → REC でスピンを記録）、パッドで録音（歌詞・FX の長押し・立ち絵）、PC 版のページが変わらないこと |
 | `npm run test:export` | 1秒の MP4 書き出し |
 | `npm run test:mmd` | MMD（手元の素材の場所を `MMD_MODEL` / `MMD_MOTION`（任意で `MMD_CAMERA`）か、`models/mmd-test.json` で指定したときだけ。素材はコミットしない） |
 | `node scripts/shot.mjs test-out "style=neon&bg=1" "4,5.3"` | テスト用ページ（`test.html`）でフレームを PNG に |
@@ -90,7 +90,7 @@ Project（JSON、localStorage）+ 素材（IndexedDB）
 `npm run build` の `dist/` をそのまま静的サイトとして置けます（GitHub Pages など）。パスは相対（`vite.config.ts` の `base: './'`）なので、`/<リポジトリ名>/` の下でも動きます。ページは PC 版（`index.html`）とスマホ版（`mobile/index.html` → `dist/mobile/`）の2つです（`build.rollupOptions.input`）。
 `dist/` には `LICENSE` と `THIRD_PARTY_LICENSES.txt`（ビルドに入った npm パッケージのライセンス文。ビルド時に自動生成）が入ります。デモ素材の扱いは `public/demo/LICENSE.md`。
 フォントは Google Fonts から読み込みます（Anton・Cormorant Garamond・Dela Gothic One・DotGothic16・M PLUS Rounded 1c・Mochiy Pop One・Montserrat・Noto Sans JP・Orbitron・Share Tech Mono・Shippori Mincho B1・Zen Kaku Gothic New。すべて SIL Open Font License）。
-共有カード（Open Graph / X のカード）は `index.html` の `og:` / `twitter:` のメタタグと `public/og.jpg`（1200×630）です。画像は開発サーバー起動中に `node scripts/og-card.mjs` で作り直せます。`og:image` は公開 URL（GitHub Pages）の絶対パスです。
+共有カード（Open Graph / X のカード）は `index.html` の `og:` / `twitter:` のメタタグと `public/og.jpg`（1200×630）です。画像は開発サーバー起動中に `node scripts/og-card.mjs` で作り直せます。スマホ版（`mobile/index.html`）のカードは `public/og-mobile.jpg`（`node scripts/og-card.mjs --mobile`。スマホ版の画面を端末の枠に入れたもの）。`og:image` は公開 URL（GitHub Pages）の絶対パスです。
 
 ## 演出の追加
 
