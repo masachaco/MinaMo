@@ -60,6 +60,10 @@ export default defineConfig({
   // relative paths: the build works from any folder (GitHub Pages serves it under /<repo>/)
   base: './',
   server: { port: 5178 },
-  build: { target: 'es2022' },
+  build: {
+    target: 'es2022',
+    // the phone page lives in its own folder (dist/mobile/); the PC page is unchanged
+    rollupOptions: { input: { main: 'index.html', mobile: 'mobile/index.html' } },
+  },
   plugins: [licenses(), testSong()],
 });

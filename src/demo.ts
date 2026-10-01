@@ -15,7 +15,10 @@ interface DemoManifest {
   backgrounds?: { id: string; file: string; name?: string }[];
 }
 
-const base = () => `${import.meta.env.BASE_URL}demo/`;
+// relative to the bundle (assets/ in the build, src/ on the dev server), so pages in subfolders (mobile/) find it too;
+// a variable, so Vite leaves the URL to the browser
+const DEMO_DIR = '../demo/';
+const base = () => new URL(DEMO_DIR, import.meta.url).href;
 
 export const demoEnabled = () => new URLSearchParams(location.search).get('demo') !== '0';
 

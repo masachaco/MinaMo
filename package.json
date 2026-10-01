@@ -17,7 +17,8 @@
     "test:edit": "node scripts/edit-test.mjs",
     "test:plugin": "node scripts/plugin-test.mjs",
     "test:demo": "node scripts/demo-test.mjs",
-    "test:tutorial": "node scripts/tutorial-test.mjs"
+    "test:tutorial": "node scripts/tutorial-test.mjs",
+    "test:mobile": "node scripts/mobile-test.mjs"
   },
   "dependencies": {
     "@moeru/three-mmd": "0.2.0-beta.2",
