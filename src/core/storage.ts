@@ -72,12 +72,11 @@ function readBlob(d: IDBDatabase, id: string): Promise<Blob | null> {
   });
 }
 
-// Media also kept in memory for the session: some browsers cannot store blobs in IndexedDB (private browsing,
-// in-app browsers, a full disk), and the project still has to work until the page is closed.
+// Media that IndexedDB refused (private browsing, in-app browsers, a full disk) are kept in memory instead, so the
+// project still works until the page is closed. Only those: stored media are not held twice.
 const memory = new Map<string, Blob>();
 
 export async function putMedia(id: string, blob: Blob): Promise<void> {
-  memory.set(id, blob);
   try {
     const d = await db();
     await new Promise<void>((res, rej) => {
@@ -85,9 +84,12 @@ export async function putMedia(id: string, blob: Blob): Promise<void> {
       tx.objectStore(STORE).put(blob, id);
       tx.oncomplete = () => res();
       tx.onerror = () => rej(tx.error);
+      tx.onabort = () => rej(tx.error); // e.g. over the storage quota
     });
+    memory.delete(id);
   } catch (e) {
-    console.warn('putMedia failed', e);
+    console.warn('putMedia failed; kept in memory for this session', e);
+    memory.set(id, blob);
   }
 }
 
