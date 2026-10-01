@@ -20,6 +20,8 @@ async function boot() {
   const app = new App($('#out') as HTMLCanvasElement);
   (window as any).app = app;
   await app.init().catch((e) => console.error(e));
+  // the phone page opens on the FX track (pads work while just playing)
+  app.setMode('fx');
 
   wireTransport(app);
   const pads = buildPads(app);

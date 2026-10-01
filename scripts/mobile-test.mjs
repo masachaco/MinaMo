@@ -23,6 +23,7 @@ await page.waitForFunction(() => window.app?.project?.audio && window.app.time >
 await page.waitForTimeout(800);
 const st = await page.evaluate(() => ({ t: window.app.time, chars: window.app.project.characters.length, scrollW: document.documentElement.scrollWidth }));
 check('the demo opens at the start of the singing', Math.abs(st.t - 22.5) < 0.05 && st.chars > 0, JSON.stringify(st));
+check('opens on the FX track', await page.evaluate(() => window.app.mode === 'fx' && document.querySelector('.mode-tab.on')?.dataset.mode === 'fx'));
 check('no horizontal scroll at 390px', st.scrollW <= 390, String(st.scrollW));
 await page.screenshot({ path: 'test-out/mobile-1.png' });
 
